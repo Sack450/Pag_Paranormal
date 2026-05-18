@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>.ebGaramond {
+    font-family: "EB Garamond", serif
+    }
+.hankenGrotesk {
+    font-family: "Hanken Grotesk", sans-serif
+    }
+html { scroll-behavior: smooth; }
+.nav-hidden { transform: translateY(-100%); }
+nav { transition: transform 0.35s ease; }
+/* Dossier Texture Overlay */
+.dossier-texture::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.02;
+    z-index: 9999;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDbNsnFLB2uMxhurvKynO98h7u0r7hwE6FVahHB1kQGpy4EURVTvsftZe9Qum34YuhPPcN1S3nWwVtpdZ0T4cWOxAzgr7LfacxpWyRmc6QmuS98Y7kF55qilrLHzPym6DD-LgtnZrE_7bFp37qSE7GzoLmHydXL125gIGeMfj2ft4Fk9OsNC0s2tZFpVsh15ER1DbjHZEPBSvCrNjR1FdQpPCXq_kecA3mUQpaB6wdxSerY-k-s-c051nD2iw4GsAtPbYUtyGe5EBtY)
+    }
+.scanning-focus:focus-within::after {
+    content: "Scanning...";
+    position: absolute;
+    right: 0;
+    top: -18px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #b6171e;
+    letter-spacing: 0.1em
+    }</style>
+<script id="tailwind-config" src="v2.js"></script>
+</head>
+<body class="bg-background text-on-background dossier-texture min-h-screen flex flex-col font-body-md text-body-md">
+<!-- Top Navigation Shell -->
+<nav id="mainNav" class="bg-background dark:bg-background border-b border-primary dark:border-on-background flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20 fixed top-0 z-50">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-on-background">ARCHIVE_0</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary dark:hover:text-secondary-container transition-colors duration-300" href="#secInvestigations">Investigations</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary dark:hover:text-secondary-container transition-colors duration-300" href="#secExplorations">Explorations</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary dark:hover:text-secondary-container transition-colors duration-300" href="#secShop">Shop</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary dark:hover:text-secondary-container transition-colors duration-300" href="#secAbout">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps px-4 py-2 bg-primary text-on-primary hover:bg-secondary transition-colors duration-300">Classified</button>
+</div>
+</nav>
+<!-- Side Navigation Shell (Desktop Only) -->
+<aside class="hidden lg:flex flex-col h-screen bg-surface dark:bg-surface-container border-r border-primary dark:border-outline w-64 pt-24 px-4 fixed left-0 top-0 z-40">
+<div class="mb-8 px-4">
+<p class="font-label-caps text-label-caps text-secondary mb-1">OPERATIVE_01</p>
+<p class="text-[10px] uppercase tracking-widest text-outline">Verified Status</p>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 p-3 font-label-caps text-label-caps bg-primary text-on-primary dark:bg-on-background dark:text-background translate-x-1 transition-transform" href="#secDossiers">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span> Dossiers
+            </a>
+<a class="flex items-center gap-3 p-3 font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-primary-container transition-colors" href="#secInvestigations">
+<span class="material-symbols-outlined">newspaper</span> News
+            </a>
+<a class="flex items-center gap-3 p-3 font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-primary-container transition-colors" href="#secPodcast">
+<span class="material-symbols-outlined">mic</span> Media
+            </a>
+<a class="flex items-center gap-3 p-3 font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-primary-container transition-colors" href="#secGallery">
+<span class="material-symbols-outlined">photo_library</span> Gallery
+            </a>
+<a class="flex items-center gap-3 p-3 font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-primary-container transition-colors" href="#secShop">
+<span class="material-symbols-outlined">shopping_bag</span> Store
+            </a>
+</div>
+<div class="mt-auto pb-8 border-t border-outline-variant pt-4">
+<button class="w-full font-label-caps text-label-caps py-3 border border-primary mb-4 hover:bg-primary hover:text-on-primary transition-all">Support Mission</button>
+<a class="flex items-center gap-3 p-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+</div>
+</aside>
+<main class="flex-grow lg:ml-64 mt-20">
+<!-- Hero Section -->
+<section id="secDossiers" class="px-margin-mobile md:px-margin-desktop py-24 max-w-container-max mx-auto border-b border-outline-variant scroll-mt-24">
+<div class="grid grid-cols-1 md:grid-cols-2 items-center gap-gutter">
+<div>
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">ESTABLISHED 1984 — BUREAU OF ANOMALIES</span>
+<h1 class="font-display-lg text-display-lg md:text-[64px] mb-8 leading-none">The Unseen <br/><span class="text-secondary">Archive.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-10">
+                        A rigorous forensic approach to the inexplicable. We document, verify, and preserve evidence of paranormal occurrences that defy conventional scientific explanation.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps hover:bg-secondary transition-colors duration-300">Enter Dossiers</button>
+<button class="border border-primary px-8 py-4 font-label-caps text-label-caps hover:bg-surface-container-low transition-colors duration-300">Submit Evidence</button>
+</div>
+</div>
+<div class="relative">
+<div class="border-[12px] border-primary shadow-2xl relative overflow-hidden group">
+<img class="w-full aspect-[4/5] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A haunting black and white photograph of a dense, misty forest where a faint, translucent humanoid figure stands between ancient trees. The lighting is low-key and atmospheric, with sharp contrasts and a slight film grain texture. The overall mood is investigative, clinical, and eerie, reflecting a professional paranormal research aesthetic with high-contrast shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjM2fdSno4j9SPlU88By6pOPBTJtQvPZ1pQ3KxqM0VrJWcmx6gKYRsTJtsPEpXCex_kvb2Ue6s5U8KUuch2h6wsTmTJ8yEwhjimbYmNzoBTBnm4uXqVKlsIRFgwvF6mNCF_kQjWn1bUMV3Q13VzABNi52e0Yt3i9U6qTUVLUozCIBlgmmf_LEd14-SpPhkENbXo0BnYIHn3Q1elY332Cq4smm5S4qowtuaZDvVhVjQpQhopguCcgwfwqfxUDerubHNL_HhKcEHaF2d"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">EV_LOG_0012</div>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white border border-outline-variant p-4 shadow-lg max-w-[200px]">
+<p class="font-label-caps text-[10px] text-secondary">INCIDENT LOCATION</p>
+<p class="font-headline-sm text-headline-sm leading-tight mt-1">Blackwood Valley</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Investigations & News (Bento Grid) -->
+<section id="secInvestigations" class="px-margin-mobile md:px-margin-desktop py-24 max-w-container-max mx-auto scroll-mt-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-md text-headline-md">Active Investigations</h2>
+<p class="font-body-md text-on-surface-variant">Real-time reports from the field.</p>
+</div>
+<a class="font-label-caps text-label-caps text-secondary flex items-center gap-2 hover:underline" href="#">
+                    View All Case Files <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Large Feature Card -->
+<div class="md:col-span-2 bg-white border border-outline-variant shadow-sm p-8 flex flex-col group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-[10px] px-2 py-1 bg-error-container text-on-error-container flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> ACTIVE ANOMALY
+                        </span>
+<span class="font-label-caps text-[10px] text-outline">REF: CASE_9921</span>
+</div>
+<img class="w-full aspect-video object-cover mb-8 filter grayscale brightness-75 group-hover:brightness-100 transition-all duration-500" data-alt="A forensic photograph of an abandoned, desolate mental asylum hallway with peeling paint and long, dramatic shadows. The image is presented in a monochromatic, high-contrast style with a clinical white border. A sense of forensic investigation is conveyed through the sharp focus on architectural decay and the cold, sterile atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFvbG17DaqB0zWqqxnX8saHkk00nO02siCd2tCWFs7DnqnRiyWKcos8dsbprJzE-UBUr5wYE_OWn7Xmc4PLFSrVRhqg3qJoGrVwfULV3fs5Yd6kIhqf8ApOzW5tZjYpJrfDdW0BycJsJBEN384FN7ZtWchhA8EraFAKA2RK-hC36FrMm-OKchuksYn-BoCs6dSWXb-1FRj8IveOfUq1K2fgCUhSBO_0hNW0YqurGvfoEhfDhrteCUOgyXvUbO034lDYKzeHT-088yC"/>
+<h3 class="font-headline-sm text-headline-sm mb-4">The Whispering Halls of St. Jude's</h3>
+<p class="text-on-surface-variant mb-6">New EVP recordings captured at 03:00 AM indicate intelligent responses to operative queries. Thermal scans show localized drops of 15 degrees Celsius.</p>
+<button class="mt-auto font-label-caps text-label-caps self-start border-b border-primary hover:text-secondary transition-colors">Read Full Dossier</button>
+</div>
+<!-- Side Cards Stack -->
+<div class="space-y-gutter">
+<div class="bg-white border border-outline-variant p-6 shadow-sm hover:border-primary transition-colors cursor-pointer">
+<p class="font-label-caps text-[10px] text-outline mb-2">NEWS | 2 HOURS AGO</p>
+<h4 class="font-headline-sm text-[20px] leading-tight mb-2">Pentagon Declassifies "UAP-X" Thermal Footage</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2">Recent leaks suggest the object exhibited non-ballistic movement patterns...</p>
+</div>
+<div class="bg-white border border-outline-variant p-6 shadow-sm hover:border-primary transition-colors cursor-pointer">
+<p class="font-label-caps text-[10px] text-outline mb-2">RESEARCH | 1 DAY AGO</p>
+<h4 class="font-headline-sm text-[20px] leading-tight mb-2">The Physics of Apparitional Density</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2">A technical breakdown of how spectral entities interact with solid matter.</p>
+</div>
+<div class="bg-white border border-outline-variant p-6 shadow-sm hover:border-primary transition-colors cursor-pointer">
+<p class="font-label-caps text-[10px] text-outline mb-2">ALERTS | SYSTEM</p>
+<h4 class="font-headline-sm text-[20px] leading-tight mb-2">Sensor Grid Online: Zone 4</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2">Multiple triggers reported in the North Appalachian segment.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Podcast Section -->
+<section id="secPodcast" class="bg-primary text-on-primary py-24 scroll-mt-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/3 aspect-square relative">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="A professional studio microphone in a dark, moody setting, illuminated by a single red neon light strip. The aesthetic is clean and modern with deep shadows and high-contrast red accents against a pitch-black background. The mood is intimate and serious, perfect for an investigative paranormal podcast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgC5-asejq9y5368Dmnir_6RFBoDFmlPHZmQ0EqqTVRG2Yi6fBbGrXR2YfuO8Afgph3jfORqKQMOzFDPVTKLMHUdpiPPxq3JYP7xBZ_H87Tx9dHGtFvSfQXJIYA61GKhliB8wnsXU--ctgGQsEj_zfYnliKdbpx3DPBYkit-ROU6QS-IPNiRNZEANFumaEV02VgCdE8n5wSXMwR1QqIv3eP9JejY2Z5feTDn5M4ISn-hFLGwcp4OQ8TUCM1vwWwiVwqrwPEbklDHYN"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-2/3">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">FEATURED EPISODE — EP. 42</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 italic">"The Silence of the Red Woods"</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-8 max-w-2xl">
+                            We interview a survivor of the 1992 disappearances. A first-hand account of the missing time phenomena and the strange hum that preceded the events.
+                        </p>
+<div class="flex items-center gap-8">
+<a class="font-label-caps text-label-caps flex items-center gap-2 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined">podcasts</span> LISTEN ON SPOTIFY
+                            </a>
+<a class="font-label-caps text-label-caps flex items-center gap-2 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined">rss_feed</span> RSS FEED
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Explorations (Atmospheric Row) -->
+<section id="secExplorations" class="px-margin-mobile md:px-margin-desktop py-24 max-w-container-max mx-auto border-b border-outline-variant scroll-mt-24">
+<h2 class="font-headline-md text-headline-md mb-12 text-center">Explorations &amp; Field Work</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 border border-primary">
+<img class="w-full aspect-video object-cover filter grayscale group-hover:scale-105 transition-transform duration-1000" data-alt="A wide, cinematic landscape of a foggy, desolate moor under a heavy, overcast sky. The palette is muted grays and desaturated greens, with high-contrast dark tones. The mood is lonely, mysterious, and foreboding. The image has a subtle film-grain texture and sharp focus, characteristic of professional landscape evidence photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb6BFWG2HEsAJsYcolyZANLa-Xb_sxOKxfoJn6Wds46LDqSbSZQo9mP7pvcans5asW9N3zaaL2ul_niZJbSsJPxQufhXuAhebytUQXcLbmm7ELUjd2mw-dWL2GijgI70WnthWycj4L4IzgF1cwVIvy28rEelmXZ2MuWdmuweBs2r-PE0QDTuLHvOxuMESYZ4pWRvLJ-UADeB6MSTLnWu84nhVahHe5nqsvF3Cumn0m2FuXDgytiYD7UpVtxe71vpX4CIvh97nKi54r"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-white px-6 py-3 border border-white">Watch Video</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Expedition: The Grey Coast</h3>
+<p class="text-on-surface-variant">Documenting anomalous light patterns over the cliffs of Orkney.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 border border-primary">
+<img class="w-full aspect-video object-cover filter grayscale group-hover:scale-105 transition-transform duration-1000" data-alt="A stark, minimalist long-exposure photograph of the night sky, featuring stars trailing over a lonely silhouette of a mountain ridge. The image is deep black and white, with intense contrast. The sky feels vast and indifferent, creating a sense of professional astronomical inquiry and mysterious cosmic depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl4OcmU9qT6ypJAKAZMExy6PH8pn1mdky-z3FOliHDCVtqpV40oL1-OE_wD-dBvVYuNgAkekpbaUa4uxTEo6_28AXncCPeXSargHy2vxAt5OeFkSfphwh2uNKMWvFgybLdyE2XVFtt3hTm2Fh3tD_NnVgmCIjkZWZQm1IBlGMUgeaGl0q2BQyvdW8-Jky42gGG6okf7AL4Z0q3M-y6GbSA5riwG7XtQO-XAigcicoVd-H-tDhYuqTmZ84hjqwQyndpG6fhSwT_wwA5"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-white px-6 py-3 border border-white">Watch Video</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Project: Horizon Scan</h3>
+<p class="text-on-surface-variant">A 48-hour vigil monitoring seismic activity and infrasound anomalies.</p>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section id="secGallery" class="py-24 scroll-mt-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-center mb-12">
+<div class="inline-flex border border-primary p-1 bg-white">
+<button class="px-6 py-2 font-label-caps text-label-caps bg-primary text-on-primary">INVESTIGATIVE TEAM</button>
+<button class="px-6 py-2 font-label-caps text-label-caps hover:bg-surface-variant transition-colors">COMMUNITY FILES</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square border border-outline-variant p-2 bg-white">
+<img class="w-full h-full object-cover filter grayscale grayscale-100 hover:grayscale-0 transition-all duration-500" data-alt="A professional headshot of a serious woman in forensic attire, looking away from the camera. The background is a blurred laboratory or archival space. The lighting is cold and precise. Black and white high-contrast photography with a classic, scholarly feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4gOrsPSJ5O_fu-HElRDmbE3_xN9pX6TtzA5-BV_kEQkll0QDbYn1J88aXmN03C8U07FsuNNUYE7fVaurHbvSt0pAaEeQAaab7vN1UpVjECMF2WuptohKtoVqDmlPQXahPv4xLJCwpx05CXhllyKNEIuReo_UD4jMbfL_Id0Ya8R2zqCpTgCEkcsyp-7EAxGyRQuFiHqA5heqtfOEGDJxirFpNDkwnfmDcI_PMBz2LvPtmAtgovJU_wLFQ6hrdG-u_fNxKMNXPpwIe"/>
+</div>
+<div class="aspect-square border border-outline-variant p-2 bg-white">
+<img class="w-full h-full object-cover filter grayscale" data-alt="A portrait of an older man with intense, focused eyes, appearing as a professional lead researcher. The style is moody and high-contrast black and white, shot in a library filled with old books. The mood is academic and investigative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_KIN7CRcd8gL6WtScXVvfyGg2H60V2WknnlOZGQpALULfSZ0bcTw61Pu1WQgjGyB23AVVCVGlMFaVr-SPCwI33hhCntCpa-hsw0-SN8-VZ_EW9uPQDKNok4hYVh3ONTvmRK59wJaNknhaP44kWsRwNIPlKzPvXErfhpMI_WWevRX0MMYWD1_Hn4uF-CoujPMVvOH_sqKDbwEXWn5zJqp5zFD1r9rg0LbHL-3lkyu75HF0R5F6OhRo7RJqtm8iW-QnH4QIg7TxOvhk"/>
+</div>
+<div class="aspect-square border border-outline-variant p-2 bg-white">
+<img class="w-full h-full object-cover filter grayscale" data-alt="A black and white forensic portrait of a technician working with electronic equipment in a dark room. Only their hands and face are highlighted by a stark, cold light source. The mood is technical and forensic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7SuaMHck6m7VxnOozblqpr9PqajPRwKIMim6ehomH8SONoEop8_mtd053CVJvZRV6VVQM8WWeyQ8ctaLv5vEDc5zcDWpHoql9sLvUFFB_zPAZxYlrykkvHnneJoTSty1lrS7SASc1caYnYWp0VMhQjhUN2Ueyg0BNbGAbnlv_w0mU9bL5I99x59gEImRDzKTW5-sWQkJSZnCQo3BR_TgGQOc7VaxY5wbTi7yIXl3lpyJR9Jka21DzigEGgQeNn5CiSk99jKMZOB3A"/>
+</div>
+<div class="aspect-square border border-outline-variant p-2 bg-white">
+<img class="w-full h-full object-cover filter grayscale" data-alt="A portrait of a young professional operative looking directly into the lens with a neutral expression. The background is a clean white studio setting with subtle film grain. The photography is sharp and clinical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzhPoH3H3v_Cz_dhhZyZ5iRiMDFz1kEKdVxj2TOQv6voFpD5DxmRH3-fkyDY6XRKrpO-HZF9-xMCLwoHAdK1QOVlnKoFs_89et1tQjWeougO-mYIlCHzTvzE7CiZ_RyOwvOWSp32KZApDuZg_g9YqkexQItFIkE74yZuqJG5KzaGs3Rp9P-y9PJv9yVMArCL-hhi1unaEydGFjMwb1-gBPjILvAlMV9oZg_sqPNWaiEOMrvH93HikjgmCvHQnF2HJLeaghfp-g41oa"/>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section id="secAbout" class="bg-surface-container-low py-24 border-y border-outline-variant scroll-mt-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<h2 class="font-label-caps text-label-caps text-secondary mb-4 uppercase">Lead Investigator</h2>
+<h3 class="font-headline-md text-[40px] mb-6">Dr. Elias Thorne</h3>
+<div class="space-y-4 font-body-lg text-body-lg text-on-surface-variant italic">
+<p>"The unseen is not the non-existent. It is simply that which we have yet to measure."</p>
+<p class="not-italic text-on-surface text-base">Elias has spent twenty years at the intersection of quantum physics and psychical research. As the founder of Archive 0, he bridges the gap between folklore and empirical data.</p>
+</div>
+<div class="mt-8">
+<img alt="Signature" class="h-16 filter invert opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-NT_x69e5kmpnFGuRhSqlpvLTh-cSuNAMaDyeJi4WS12--UK-FKnwPHX2RbmigwiVS9opdCNcgDUlIG9xEe64JRca6ClgqQpfFq31RA9O1VKgum0rEDHDgGMxAdylfug7qrvXPX0URaWW0MeG1joTqN7D3Zx-vlb1AtSs1U8KTCR7X0EVcmlLqntYWWAptVwwsNuX2dTtX3NA39qRayUN6c1Z-XllvbNpIQus7M_auQEVDybXBcQzT_6TlO_kFX-nv9vd-W3GtwkR"/>
+</div>
+</div>
+<div class="order-1 md:order-2 border-l-4 border-secondary pl-8">
+<div class="bg-white p-2 border border-outline-variant shadow-xl rotate-1">
+<img class="w-full aspect-[4/5] object-cover filter sepia-[0.2] contrast-125" data-alt="A candid black and white photograph of a man in his 40s wearing glasses and a trench coat, standing in a library with old manuscripts. He is looking at a piece of evidence through a magnifying glass. The lighting is warm but moody, with a classic editorial feel. The image is framed as a dossier photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SX3a4AqEcbX66Q5N_YZ3Q9RUPOtlX1ZI_PM9BaghaRk3ER4EnXAa3kxmzKKAIIOxuCdNChDOEFefBMtiBzY2zEW7YGFHt5absGeKkQouUzJNEo-CnEISFFaWlzaWTXO17N-2fotvr4Oeg5gbCI37mAmgmlIKrXXvj75mt-C-Lzatvf8ZSkZnZbQlkZXSTR_Oe0URgN_6LoI2iDyv8YF-ONIm_CAR0bhs3HnYdY2uLclh3H6RVSVhZnz050RuwYBITclfnkNnV8jP"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Donations Tiers -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-md text-headline-md text-center mb-16">Support the Archive</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="border border-outline-variant p-8 flex flex-col items-center text-center hover:bg-white hover:shadow-xl transition-all">
+<span class="font-label-caps text-label-caps text-outline mb-4">LEVEL 01</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Supporter</h3>
+<p class="text-[32px] font-bold mb-6">$5<span class="text-sm font-normal text-outline">/mo</span></p>
+<ul class="text-sm space-y-3 mb-10 text-on-surface-variant">
+<li>Access to Private Newsletter</li>
+<li>Digital Archive Entry</li>
+<li>Community Badge</li>
+</ul>
+<button class="w-full border border-primary py-3 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all">Enroll Now</button>
+</div>
+<div class="border-2 border-primary p-8 flex flex-col items-center text-center bg-white shadow-lg relative -top-4">
+<div class="absolute -top-3 bg-secondary text-white px-4 py-1 font-label-caps text-[10px]">MOST ACTIVE</div>
+<span class="font-label-caps text-label-caps text-secondary mb-4">LEVEL 02</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Investigator</h3>
+<p class="text-[32px] font-bold mb-6">$15<span class="text-sm font-normal text-outline">/mo</span></p>
+<ul class="text-sm space-y-3 mb-10 text-on-surface-variant">
+<li>Raw EVP Audio Files</li>
+<li>Live Investigation Streams</li>
+<li>Case File Voting Rights</li>
+<li>Early Access to Podcast</li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:bg-secondary transition-all">Enroll Now</button>
+</div>
+<div class="border border-outline-variant p-8 flex flex-col items-center text-center hover:bg-white hover:shadow-xl transition-all">
+<span class="font-label-caps text-label-caps text-outline mb-4">LEVEL 03</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Patron of the Unknown</h3>
+<p class="text-[32px] font-bold mb-6">$50<span class="text-sm font-normal text-outline">/mo</span></p>
+<ul class="text-sm space-y-3 mb-10 text-on-surface-variant">
+<li>Signed Evidence Prints</li>
+<li>Private Consultations</li>
+<li>Lead Researcher Mentorship</li>
+<li>Physical Dossier Shipments</li>
+</ul>
+<button class="w-full border border-primary py-3 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all">Enroll Now</button>
+</div>
+</div>
+</section>
+<!-- Shop Section -->
+<section id="secShop" class="bg-surface-container py-24 scroll-mt-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-md text-headline-md">The Shop</h2>
+<p class="font-label-caps text-label-caps border-b border-primary cursor-pointer">Browse All Items</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="group">
+<div class="bg-white border border-outline-variant p-4 mb-4 relative overflow-hidden">
+<img class="w-full aspect-[3/4] object-cover filter grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A professional product shot of a minimalist, thick hardcover book titled 'ARCHIVE 0' in stark black typography on a white cover. The book is placed on a clean white surface with sharp shadows and high-contrast lighting. The aesthetic is modern, clean, and professional, reflecting the investigative tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEtJVzmofkiC8VaCXGzrnqKOprY3VV3dIp9bDWzzE5Nnq4DB31VocBWEybJKx-HaMrLHXI86gPsZNuuMym826fywIzGGYUSCr_JTW0P99Sd0jVP17wp56etMYsHTkObE_pz7-HSV2WCaKZ8Dxwf9iLg3f3UJvecZFKBUUxFS1lsHj8H4BWLhmqQKipKzWuJL1IdwCxfd5XJdXbEPqD4B3uTBxH8c7-colmD95KvKD_4KRaqG2LjOJZDb48TqGcagqS4Cv58d8XXrYB"/>
+</div>
+<h4 class="font-label-caps text-label-caps mb-1">ARCHIVE 0: Collected Evidence</h4>
+<p class="text-secondary font-bold">$45.00</p>
+</div>
+<div class="group">
+<div class="bg-white border border-outline-variant p-4 mb-4 relative overflow-hidden">
+<img class="w-full aspect-[3/4] object-cover filter grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A set of black and white high-contrast photographic prints of mysterious landscapes, framed in thin black metal frames. They are arranged in a minimalist gallery layout. The mood is artistic and professional, fitting for forensic evidence souvenirs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvdU17B62ZhxBUFnG2RwzMSi2dYoGm9JbsP_RVww6RR63cFxDjI3W2mE3kJjBNKlcWDgeujGsJscuvQjd5Fh9gxr3i3FOivp6E-9Ngu7Vo_KjVXAZPFK-h3rG5QhbODr0fFx-Kv1SkS4CLgLr-me5Xw2MB77JGUkX0PsC0meb1OxegbfzlqpHA8ZFqe_5SAMAi1eAjrjjMHyN1jcaaMTP56Wo7YCHcwN9Skwbse0nUakqfCDsPFseThteWYPo-Yb4wGGuN6iOt9wJ0"/>
+</div>
+<h4 class="font-label-caps text-label-caps mb-1">Evidence Print Set (Mist)</h4>
+<p class="text-secondary font-bold">$22.00</p>
+</div>
+<div class="group">
+<div class="bg-white border border-outline-variant p-4 mb-4 relative overflow-hidden">
+<img class="w-full aspect-[3/4] object-cover filter grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality minimalist black t-shirt with a small, white 'ARCHIVE_0' logo on the chest. The shirt is displayed flat against a textured gray concrete background with hard shadows. The visual style is modern, urban, and high-contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVLyjdIXinsXwoQe4cQ_tmY-N1-n78HtQufUV5I5HeP9PDexa0JEBDCewaw3plCDykt8gBd4V_FhXdw_MWYdqeILh6DSc1YfdsG8AO91a7rAtP475XLu8bqaNV_A2or1y0bPNkPwd4oFqooQ86P2H0A4HDoNMXAYSzd1DbpUhzYeoYCVRZyAsPSsKc5_f49EHqRQQVirV8tyW0zD8YRY0FE0XuXMmVEi-Q5yhdNB2u5zmyCd5n5wNGAvEQRJcCkzu-75dYxLsILC09"/>
+</div>
+<h4 class="font-label-caps text-label-caps mb-1">Operative Field Tee</h4>
+<p class="text-secondary font-bold">$30.00</p>
+</div>
+<div class="group">
+<div class="bg-white border border-outline-variant p-4 mb-4 relative overflow-hidden">
+<img class="w-full aspect-[3/4] object-cover filter grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist black tote bag with a bold white 'CLASSIFIED' stamp on the front. The bag is hanging from a hook against a stark white wall with a sharp diagonal shadow. The design is clean, professional, and evocative of archival documentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyz6_9Wz5NKTN8fXMS5NFwg-G7zn0YY-OxULBy4drrAI5-UyvB2j1SH0ajLzSOQAqX4hpo0ozeMLswqnMJJyS-4WvrC1azdhwm65yIM_2h-di607w29crc5-20z_PbpqbR7opxzqxnyZnbM2f8tfBd8T0-4M7-1Lz8WslC06sPaciJRylaJadRKbvraG_wZPnG_Y6gyi_Gm6pST12vioI48amkuQ205i39aAtA-DdmGIdEVeCwHhXdAghFRQbzNeMpBk_4WtzBbmhg"/>
+</div>
+<h4 class="font-label-caps text-label-caps mb-1">Classified Canvas Tote</h4>
+<p class="text-secondary font-bold">$18.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<h2 class="font-headline-md text-headline-md mb-6">Connect with the Unknown</h2>
+<p class="text-on-surface-variant mb-8">For media inquiries, data submissions, or partnership requests, use the protocol below. We monitor all channels 24/7.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline">SECURE EMAIL</p>
+<p class="font-body-md">ops@unseenarchive.org</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">share</span>
+</div>
+<div class="flex gap-4">
+<a class="font-label-caps text-label-caps text-secondary hover:underline" href="#">TWITTER</a>
+<a class="font-label-caps text-label-caps text-secondary hover:underline" href="#">INSTAGRAM</a>
+<a class="font-label-caps text-label-caps text-secondary hover:underline" href="#">YOUTUBE</a>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white border border-primary p-10 shadow-2xl relative scanning-focus">
+<form class="space-y-6">
+<div class="border-b border-outline focus-within:border-secondary transition-colors relative">
+<label class="font-label-caps text-[10px] text-outline uppercase">Operative Name</label>
+<input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-background placeholder:text-outline-variant" placeholder="Full Name" type="text"/>
+</div>
+<div class="border-b border-outline focus-within:border-secondary transition-colors">
+<label class="font-label-caps text-[10px] text-outline uppercase">Transmission Type</label>
+<select class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-background">
+<option>General Inquiry</option>
+<option>Evidence Submission</option>
+<option>Technical Feedback</option>
+<option>Media Request</option>
+</select>
+</div>
+<div class="border-b border-outline focus-within:border-secondary transition-colors">
+<label class="font-label-caps text-[10px] text-outline uppercase">Message Content</label>
+<textarea class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-background placeholder:text-outline-variant" placeholder="Detailed report..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-label-caps text-label-caps hover:bg-secondary transition-all" type="submit">Submit Transmission</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer Section -->
+<footer class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-t-4 border-secondary w-full py-12 px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-primary mb-6">ARCHIVE_0</div>
+<p class="font-body-md text-on-primary-container/70 mb-6 max-w-xs leading-relaxed">Dedicated to the preservation of unexplained phenomena through rigorous documentation and digital archiving.</p>
+<p class="font-label-caps text-[10px] text-on-primary-container/50">© 2024 PARANORMAL ARCHIVE. ALL RIGHTS RESERVED. PROPERTY OF [REDACTED].</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-secondary mb-2">QUICK ACCESS</h4>
+<a class="font-label-caps text-label-caps text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Case Files</a>
+<a class="font-label-caps text-label-caps text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Submit Evidence</a>
+<a class="font-label-caps text-label-caps text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Protocol</a>
+<a class="font-label-caps text-label-caps text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">RSS Feed</a>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-secondary mb-4">SUBSCRIBE TO TRANSMISSIONS</h4>
+<div class="flex border-b border-on-primary-container/30 pb-2 mb-4">
+<input class="bg-transparent border-none text-on-primary placeholder:text-on-primary-container/40 w-full focus:ring-0 p-0" placeholder="email@protocol.net" type="email"/>
+<button class="material-symbols-outlined text-secondary">arrow_forward</button>
+</div>
+<p class="text-[10px] uppercase text-on-primary-container/50">Frequency: Weekly Reports</p>
+</div>
+</footer>
+</main>
+<!-- Contextual FAB (Only for Home Screen logic) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-secondary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-3xl">add_photo_alternate</span>
+<span class="absolute right-20 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">SUBMIT EVIDENCE</span>
+</button>
+<script>
+// === Ocultar/mostrar navbar al hacer scroll ===
+// Se oculta al bajar y reaparece al subir, para no estorbar la lectura.
+(function() {
+  const nav = document.getElementById('mainNav');
+  let ultimoScroll = 0;
+  const umbral = 10;
+  window.addEventListener('scroll', function() {
+    const actual = window.pageYOffset;
+    if (actual <= 100) { nav.classList.remove('nav-hidden'); ultimoScroll = actual; return; }
+    if (Math.abs(actual - ultimoScroll) < umbral) return;
+    if (actual > ultimoScroll) { nav.classList.add('nav-hidden'); }
+    else { nav.classList.remove('nav-hidden'); }
+    ultimoScroll = actual;
+  });
+})();
+</script>
+</body></html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>.ebGaramond {
+    font-family: "EB Garamond", serif
+    }
+.hankenGrotesk {
+    font-family: "Hanken Grotesk", sans-serif
+    }
+html { scroll-behavior: smooth; }
+.nav-hidden { transform: translateY(-100%); }
+nav { transition: transform 0.35s ease; }
+/* Dossier Texture Overlay */
+.dossier-texture::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.02;
+    z-index: 9999;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDbNsnFLB2uMxhurvKynO98h7u0r7hwE6FVahHB1kQGpy4EURVTvsftZe9Qum34YuhPPcN1S3nWwVtpdZ0T4cWOxAzgr7LfacxpWyRmc6QmuS98Y7kF55qilrLHzPym6DD-LgtnZrE_7bFp37qSE7GzoLmHydXL125gIGeMfj2ft4Fk9OsNC0s2tZFpVsh15ER1DbjHZEPBSvCrNjR1FdQpPCXq_kecA3mUQpaB6wdxSerY-k-s-c051nD2iw4GsAtPbYUtyGe5EBtY)
+    }
+.scanning-focus:focus-within::after {
+    content: "Escaneando...";
+    position: absolute;
+    right: 0;
+    top: -18px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #b6171e;
+    letter-spacing: 0.1em
+    }</style>
+<script id="tailwind-config" src="v1.js"></script>
+</head>
+<body class="bg-background text-on-background dossier-texture min-h-screen flex flex-col font-body-md text-body-md">
+<!-- Top Navigation Shell -->
+<nav id="mainNav" class="bg-background border-b-2 border-primary flex flex-col w-full px-margin-desktop max-w-container-max mx-auto fixed top-0 z-50 pt-4 pb-2">
+<div class="flex justify-between items-center mb-4">
+<div class="font-headline-md text-[28px] font-bold tracking-tighter text-primary uppercase">ARCHIVO_0</div>
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps px-6 py-2 bg-primary text-on-primary hover:bg-secondary transition-colors duration-300">CLASIFICADO</button>
+</div>
+</div>
+<div class="flex justify-center border-t border-outline-variant py-2">
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-label-caps text-[11px] text-primary hover:text-secondary transition-colors duration-300 uppercase tracking-widest" href="#secDossiers">Dossiers</a>
+<a class="font-label-caps text-[11px] text-primary hover:text-secondary transition-colors duration-300 uppercase tracking-widest" href="#secNoticias">Noticias</a>
+<a class="font-label-caps text-[11px] text-primary hover:text-secondary transition-colors duration-300 uppercase tracking-widest" href="#secPodcast">Podcast</a>
+<a class="font-label-caps text-[11px] text-primary hover:text-secondary transition-colors duration-300 uppercase tracking-widest" href="#secExploraciones">Exploraciones</a>
+<a class="font-label-caps text-[11px] text-primary hover:text-secondary transition-colors duration-300 uppercase tracking-widest" href="#secGaleria">Galería</a>
+<a class="font-label-caps text-[11px] text-primary hover:text-secondary transition-colors duration-300 uppercase tracking-widest" href="#secTienda">Tienda</a>
+</div>
+</div>
+</nav>
+<main class="flex-grow mt-32">
+<!-- Hero Section -->
+<section id="secDossiers" class="px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto border-b border-outline-variant scroll-mt-36">
+<div class="grid grid-cols-1 md:grid-cols-2 items-start gap-16">
+<div class="pt-8">
+<span class="font-label-caps text-[10px] text-secondary mb-6 block border-b border-secondary pb-2 max-w-[200px]">ESTABLECIDO EN 1984 — BURÓ DE ANOMALÍAS</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 leading-none">El Archivo de <br/><span class="text-secondary italic">lo Invisible.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed border-l-4 border-primary pl-6">
+                        Un riguroso enfoque forense de lo inexplicable. Documentamos, verificamos y preservamos evidencia de sucesos paranormales que desafían la explicación científica convencional.
+                    </p>
+<div class="flex gap-6">
+<button class="bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:bg-secondary transition-colors duration-300 border border-primary">Entrar a Dossiers</button>
+<button class="border border-primary px-8 py-3 font-label-caps text-label-caps hover:bg-surface-container-low transition-colors duration-300">Enviar Evidencia</button>
+</div>
+</div>
+<div class="relative">
+<div class="border-[1px] border-primary p-2 bg-white shadow-sm relative overflow-hidden group">
+<img class="w-full aspect-[4/5] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Una fotografía inquietante en blanco y negro de un bosque denso y brumoso donde una figura humanoide débil y translúcida se encuentra entre árboles centenarios. La iluminación es de tono bajo y atmosférica, con fuertes contrastes y una ligera textura de grano de película." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjM2fdSno4j9SPlU88By6pOPBTJtQvPZ1pQ3KxqM0VrJWcmx6gKYRsTJtsPEpXCex_kvb2Ue6s5U8KUuch2h6wsTmTJ8yEwhjimbYmNzoBTBnm4uXqVKlsIRFgwvF6mNCF_kQjWn1bUMV3Q13VzABNi52e0Yt3i9U6qTUVLUozCIBlgmmf_LEd14-SpPhkENbXo0BnYIHn3Q1elY332Cq4smm5S4qowtuaZDvVhVjQpQhopguCcgwfwqfxUDerubHNL_HhKcEHaF2d"/>
+<div class="absolute bottom-6 right-6 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">EV_LOG_0012</div>
+</div>
+<div class="absolute -bottom-4 -left-4 bg-white border border-primary p-4 shadow-sm max-w-[220px]">
+<p class="font-label-caps text-[9px] text-secondary border-b border-outline-variant pb-1 mb-2">UBICACIÓN DEL INCIDENTE</p>
+<p class="font-headline-sm text-headline-sm leading-tight">Valle de Blackwood</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Investigations & News (Editorial Grid) -->
+<section id="secNoticias" class="px-margin-mobile md:px-margin-desktop py-24 max-w-container-max mx-auto border-b border-outline-variant scroll-mt-36">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b-2 border-primary pb-4">
+<div>
+<h2 class="font-headline-md text-headline-md uppercase tracking-wide">Investigaciones Activas</h2>
+<p class="font-body-md text-on-surface-variant italic">Reportes en tiempo real desde el campo.</p>
+</div>
+<a class="font-label-caps text-label-caps text-secondary flex items-center gap-2 hover:underline uppercase" href="#">
+                    Ver Todos los Casos <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Large Feature Article -->
+<article class="lg:col-span-8 flex flex-col group">
+<div class="flex justify-between items-center mb-4 border-y border-outline-variant py-2">
+<span class="font-label-caps text-[10px] px-2 py-1 bg-secondary text-white flex items-center gap-2 uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Anomalía Activa
+                        </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-widest">REF: CASO_9921</span>
+</div>
+<div class="border border-primary p-1 mb-6">
+<img class="w-full aspect-[21/9] object-cover filter grayscale brightness-90 group-hover:brightness-100 transition-all duration-500" data-alt="Una fotografía forense del pasillo de un manicomio abandonado y desolado con pintura descascarada y sombras largas y dramáticas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFvbG17DaqB0zWqqxnX8saHkk00nO02siCd2tCWFs7DnqnRiyWKcos8dsbprJzE-UBUr5wYE_OWn7Xmc4PLFSrVRhqg3qJoGrVwfULV3fs5Yd6kIhqf8ApOzW5tZjYpJrfDdW0BycJsJBEN384FN7ZtWchhA8EraFAKA2RK-hC36FrMm-OKchuksYn-BoCs6dSWXb-1FRj8IveOfUq1K2fgCUhSBO_0hNW0YqurGvfoEhfDhrteCUOgyXvUbO034lDYKzeHT-088yC"/>
+</div>
+<h3 class="font-display-lg text-[40px] leading-tight mb-4 group-hover:text-secondary transition-colors">Los Pasillos Susurrantes de St. Jude</h3>
+<p class="text-on-surface-variant mb-6 text-xl leading-relaxed drop-cap">Las nuevas grabaciones EVP capturadas a las 03:00 AM indican respuestas inteligentes a las consultas de los operativos. Los escáneres térmicos muestran caídas localizadas de 15 grados Celsius.</p>
+<button class="mt-auto font-label-caps text-[11px] self-start border-b border-primary hover:text-secondary hover:border-secondary transition-colors uppercase tracking-widest pb-1">Leer Dossier Completo</button>
+</article>
+<!-- Sidebar News Column -->
+<aside class="lg:col-span-4 border-l border-outline-variant pl-8 flex flex-col gap-8">
+<h3 class="font-headline-sm text-lg uppercase tracking-widest border-b border-primary pb-2 mb-4">Últimas Noticias</h3>
+<article class="group cursor-pointer">
+<p class="font-label-caps text-[9px] text-secondary mb-2 uppercase tracking-widest">NOTICIAS | HACE 2 HORAS</p>
+<h4 class="font-headline-sm text-[22px] leading-tight mb-3 group-hover:text-secondary transition-colors">El Pentágono Desclasifica Imágenes Térmicas "FANI-X"</h4>
+<p class="text-base text-on-surface-variant line-clamp-3">Filtraciones recientes sugieren que el objeto exhibió patrones de movimiento no balísticos...</p>
+</article>
+<hr class="border-outline-variant"/>
+<article class="group cursor-pointer">
+<p class="font-label-caps text-[9px] text-secondary mb-2 uppercase tracking-widest">INVESTIGACIÓN | HACE 1 DÍA</p>
+<h4 class="font-headline-sm text-[22px] leading-tight mb-3 group-hover:text-secondary transition-colors">La Física de la Densidad Aparicional</h4>
+<p class="text-base text-on-surface-variant line-clamp-3">Un desglose técnico de cómo las entidades espectrales interactúan con la materia sólida.</p>
+</article>
+<hr class="border-outline-variant"/>
+<article class="group cursor-pointer">
+<p class="font-label-caps text-[9px] text-secondary mb-2 uppercase tracking-widest">ALERTAS | SISTEMA</p>
+<h4 class="font-headline-sm text-[22px] leading-tight mb-3 group-hover:text-secondary transition-colors">Red de Sensores en Línea: Zona 4</h4>
+<p class="text-base text-on-surface-variant line-clamp-3">Múltiples disparadores reportados en el segmento norte de los Apalaches.</p>
+</article>
+</aside>
+</div>
+</section>
+<!-- Podcast Section -->
+<section id="secPodcast" class="py-24 bg-surface border-b border-outline-variant scroll-mt-36">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<span class="font-label-caps text-[11px] text-secondary mb-6 block uppercase tracking-widest border-b border-secondary w-max mx-auto pb-2">EPISODIO DESTACADO — EP. 42</span>
+<h2 class="font-display-lg text-[48px] md:text-[64px] mb-12 italic">"El Silencio de los Bosques Rojos"</h2>
+<div class="w-full md:w-1/2 aspect-video relative mx-auto mb-12 border-[1px] border-primary p-2 bg-white shadow-md">
+<img class="w-full h-full object-cover grayscale brightness-75" data-alt="Un micrófono de estudio profesional en un entorno oscuro y sombrío, iluminado por una sola tira de luz de neón roja." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgC5-asejq9y5368Dmnir_6RFBoDFmlPHZmQ0EqqTVRG2Yi6fBbGrXR2YfuO8Afgph3jfORqKQMOzFDPVTKLMHUdpiPPxq3JYP7xBZ_H87Tx9dHGtFvSfQXJIYA61GKhliB8wnsXU--ctgGQsEj_zfYnliKdbpx3DPBYkit-ROU6QS-IPNiRNZEANFumaEV02VgCdE8n5wSXMwR1QqIv3eP9JejY2Z5feTDn5M4ISn-hFLGwcp4OQ8TUCM1vwWwiVwqrwPEbklDHYN"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-24 h-24 bg-secondary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer shadow-xl border-4 border-white">
+<span class="material-symbols-outlined text-5xl ml-2" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+<p class="font-body-lg text-2xl text-on-surface mb-10 max-w-3xl mx-auto italic leading-relaxed">
+                            Entrevistamos a un sobreviviente de las desapariciones de 1992. Un relato de primera mano del fenómeno del tiempo perdido y el extraño zumbido que precedió a los eventos.
+                        </p>
+<div class="flex items-center justify-center gap-8">
+<a class="font-label-caps text-[11px] border border-primary px-6 py-3 uppercase tracking-widest hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined align-middle mr-2 text-[18px]">podcasts</span> ESCUCHAR EN SPOTIFY
+                            </a>
+<a class="font-label-caps text-[11px] border border-primary px-6 py-3 uppercase tracking-widest hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined align-middle mr-2 text-[18px]">rss_feed</span> FEED RSS
+                            </a>
+</div>
+</div>
+</section>
+<!-- Explorations -->
+<section id="secExploraciones" class="px-margin-mobile md:px-margin-desktop py-24 max-w-container-max mx-auto border-b border-outline-variant scroll-mt-36">
+<div class="flex justify-center mb-16">
+<h2 class="font-headline-md text-headline-md uppercase tracking-widest border-b-2 border-primary pb-4 px-8">Exploraciones y Trabajo de Campo</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<article class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 border border-primary bg-white p-1">
+<img class="w-full aspect-[16/10] object-cover filter grayscale group-hover:scale-105 transition-transform duration-1000" data-alt="Un paisaje amplio y cinematográfico de un páramo brumoso y desolado bajo un cielo encapotado." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb6BFWG2HEsAJsYcolyZANLa-Xb_sxOKxfoJn6Wds46LDqSbSZQo9mP7pvcans5asW9N3zaaL2ul_niZJbSsJPxQufhXuAhebytUQXcLbmm7ELUjd2mw-dWL2GijgI70WnthWycj4L4IzgF1cwVIvy28rEelmXZ2MuWdmuweBs2r-PE0QDTuLHvOxuMESYZ4pWRvLJ-UADeB6MSTLnWu84nhVahHe5nqsvF3Cumn0m2FuXDgytiYD7UpVtxe71vpX4CIvh97nKi54r"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-label-caps text-[11px] text-white px-8 py-3 border border-white uppercase tracking-widest bg-primary/50">Ver Video</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-2xl mb-3 group-hover:text-secondary transition-colors">Expedición: La Costa Gris</h3>
+<p class="text-on-surface-variant text-lg">Documentando patrones de luz anómalos sobre los acantilados de las Orcadas.</p>
+</article>
+<article class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 border border-primary bg-white p-1">
+<img class="w-full aspect-[16/10] object-cover filter grayscale group-hover:scale-105 transition-transform duration-1000" data-alt="Una fotografía minimalista de larga exposición del cielo nocturno." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl4OcmU9qT6ypJAKAZMExy6PH8pn1mdky-z3FOliHDCVtqpV40oL1-OE_wD-dBvVYuNgAkekpbaUa4uxTEo6_28AXncCPeXSargHy2vxAt5OeFkSfphwh2uNKMWvFgybLdyE2XVFtt3hTm2Fh3tD_NnVgmCIjkZWZQm1IBlGMUgeaGl0q2BQyvdW8-Jky42gGG6okf7AL4Z0q3M-y6GbSA5riwG7XtQO-XAigcicoVd-H-tDhYuqTmZ84hjqwQyndpG6fhSwT_wwA5"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-label-caps text-[11px] text-white px-8 py-3 border border-white uppercase tracking-widest bg-primary/50">Ver Video</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-2xl mb-3 group-hover:text-secondary transition-colors">Proyecto: Escaneo del Horizonte</h3>
+<p class="text-on-surface-variant text-lg">Una vigilia de 48 horas monitoreando la actividad sísmica y las anomalías de infrasonido.</p>
+</article>
+</div>
+</section>
+<!-- Gallery Section -->
+<section id="secGaleria" class="py-24 border-b border-outline-variant scroll-mt-36">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-center mb-16">
+<h2 class="font-headline-md text-headline-md uppercase tracking-widest border-b-2 border-primary pb-4 px-8">Registros Fotográficos</h2>
+</div>
+<div class="flex justify-center mb-12">
+<div class="inline-flex border border-primary p-1 bg-white shadow-sm">
+<button class="px-8 py-3 font-label-caps text-[11px] uppercase tracking-widest bg-primary text-white">EQUIPO DE INVESTIGACIÓN</button>
+<button class="px-8 py-3 font-label-caps text-[11px] uppercase tracking-widest text-primary hover:bg-surface-variant transition-colors">ARCHIVOS DE FANS</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="aspect-[3/4] border border-primary p-2 bg-white relative group cursor-pointer">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4gOrsPSJ5O_fu-HElRDmbE3_xN9pX6TtzA5-BV_kEQkll0QDbYn1J88aXmN03C8U07FsuNNUYE7fVaurHbvSt0pAaEeQAaab7vN1UpVjECMF2WuptohKtoVqDmlPQXahPv4xLJCwpx05CXhllyKNEIuReo_UD4jMbfL_Id0Ya8R2zqCpTgCEkcsyp-7EAxGyRQuFiHqA5heqtfOEGDJxirFpNDkwnfmDcI_PMBz2LvPtmAtgovJU_wLFQ6hrdG-u_fNxKMNXPpwIe"/>
+<div class="absolute bottom-4 left-4 bg-white px-2 py-1 border border-primary">
+<span class="font-label-caps text-[9px] uppercase tracking-widest text-primary">OP_01</span>
+</div>
+</div>
+<div class="aspect-[3/4] border border-primary p-2 bg-white relative group cursor-pointer">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_KIN7CRcd8gL6WtScXVvfyGg2H60V2WknnlOZGQpALULfSZ0bcTw61Pu1WQgjGyB23AVVCVGlMFaVr-SPCwI33hhCntCpa-hsw0-SN8-VZ_EW9uPQDKNok4hYVh3ONTvmRK59wJaNknhaP44kWsRwNIPlKzPvXErfhpMI_WWevRX0MMYWD1_Hn4uF-CoujPMVvOH_sqKDbwEXWn5zJqp5zFD1r9rg0LbHL-3lkyu75HF0R5F6OhRo7RJqtm8iW-QnH4QIg7TxOvhk"/>
+<div class="absolute bottom-4 left-4 bg-white px-2 py-1 border border-primary">
+<span class="font-label-caps text-[9px] uppercase tracking-widest text-primary">DIR_00</span>
+</div>
+</div>
+<div class="aspect-[3/4] border border-primary p-2 bg-white relative group cursor-pointer">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7SuaMHck6m7VxnOozblqpr9PqajPRwKIMim6ehomH8SONoEop8_mtd053CVJvZRV6VVQM8WWeyQ8ctaLv5vEDc5zcDWpHoql9sLvUFFB_zPAZxYlrykkvHnneJoTSty1lrS7SASc1caYnYWp0VMhQjhUN2Ueyg0BNbGAbnlv_w0mU9bL5I99x59gEImRDzKTW5-sWQkJSZnCQo3BR_TgGQOc7VaxY5wbTi7yIXl3lpyJR9Jka21DzigEGgQeNn5CiSk99jKMZOB3A"/>
+<div class="absolute bottom-4 left-4 bg-white px-2 py-1 border border-primary">
+<span class="font-label-caps text-[9px] uppercase tracking-widest text-primary">TEC_04</span>
+</div>
+</div>
+<div class="aspect-[3/4] border border-primary p-2 bg-white relative group cursor-pointer">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzhPoH3H3v_Cz_dhhZyZ5iRiMDFz1kEKdVxj2TOQv6voFpD5DxmRH3-fkyDY6XRKrpO-HZF9-xMCLwoHAdK1QOVlnKoFs_89et1tQjWeougO-mYIlCHzTvzE7CiZ_RyOwvOWSp32KZApDuZg_g9YqkexQItFIkE74yZuqJG5KzaGs3Rp9P-y9PJv9yVMArCL-hhi1unaEydGFjMwb1-gBPjILvAlMV9oZg_sqPNWaiEOMrvH93HikjgmCvHQnF2HJLeaghfp-g41oa"/>
+<div class="absolute bottom-4 left-4 bg-white px-2 py-1 border border-primary">
+<span class="font-label-caps text-[9px] uppercase tracking-widest text-primary">OP_02</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-24 border-b border-outline-variant bg-surface">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-5 relative">
+<div class="border-[1px] border-primary p-2 bg-white shadow-lg">
+<img class="w-full aspect-[3/4] object-cover filter grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SX3a4AqEcbX66Q5N_YZ3Q9RUPOtlX1ZI_PM9BaghaRk3ER4EnXAa3kxmzKKAIIOxuCdNChDOEFefBMtiBzY2zEW7YGFHt5absGeKkQouUzJNEo-CnEISFFaWlzaWTXO17N-2fotvr4Oeg5gbCI37mAmgmlIKrXXvj75mt-C-Lzatvf8ZSkZnZbQlkZXSTR_Oe0URgN_6LoI2iDyv8YF-ONIm_CAR0bhs3HnYdY2uLclh3H6RVSVhZnz050RuwYBITclfnkNnV8jP"/>
+</div>
+<div class="absolute -top-4 -right-4 bg-secondary text-white px-4 py-2 font-label-caps text-[10px] uppercase tracking-widest shadow-md">
+DIRECTOR
+</div>
+</div>
+<div class="md:col-span-7">
+<h2 class="font-label-caps text-[11px] text-secondary mb-4 uppercase tracking-widest border-b border-outline-variant pb-2 max-w-[200px]">Investigador Principal</h2>
+<h3 class="font-display-lg text-[48px] mb-8">Dr. Elias Thorne</h3>
+<div class="space-y-6 font-body-lg text-2xl text-on-surface-variant leading-relaxed">
+<p class="italic border-l-4 border-secondary pl-6 text-on-surface">"Lo invisible no es lo inexistente. Es simplemente aquello que aún no hemos medido."</p>
+<p class="text-lg">Elias ha pasado veinte años en la intersección de la física cuántica y la investigación psíquica. Como fundador del Archivo 0, cierra la brecha entre el folclore y los datos empíricos.</p>
+</div>
+<div class="mt-10">
+<img alt="Signature" class="h-20 filter grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-NT_x69e5kmpnFGuRhSqlpvLTh-cSuNAMaDyeJi4WS12--UK-FKnwPHX2RbmigwiVS9opdCNcgDUlIG9xEe64JRca6ClgqQpfFq31RA9O1VKgum0rEDHDgGMxAdylfug7qrvXPX0URaWW0MeG1joTqN7D3Zx-vlb1AtSs1U8KTCR7X0EVcmlLqntYWWAptVwwsNuX2dTtX3NA39qRayUN6c1Z-XllvbNpIQus7M_auQEVDybXBcQzT_6TlO_kFX-nv9vd-W3GtwkR"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Donations Tiers -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-b border-outline-variant">
+<div class="flex justify-center mb-16">
+<h2 class="font-headline-md text-headline-md uppercase tracking-widest border-b-2 border-primary pb-4 px-8 text-center">Apoya el Archivo</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="border border-primary p-10 flex flex-col items-center text-center bg-white hover:shadow-xl transition-shadow">
+<span class="font-label-caps text-[10px] text-outline mb-6 border-b border-outline-variant pb-2 w-full uppercase tracking-widest">NIVEL 01</span>
+<h3 class="font-headline-sm text-3xl mb-2">Simpatizante</h3>
+<p class="text-[40px] font-bold mb-8 font-hankenGrotesk">$5<span class="text-sm font-normal text-outline">/mes</span></p>
+<ul class="text-lg space-y-4 mb-12 text-on-surface-variant font-body-md">
+<li class="border-b border-outline-variant pb-2">Acceso a Boletín Privado</li>
+<li class="border-b border-outline-variant pb-2">Entrada al Archivo Digital</li>
+<li class="border-b border-outline-variant pb-2">Insignia de Comunidad</li>
+</ul>
+<button class="w-full border border-primary py-4 font-label-caps text-[11px] uppercase tracking-widest hover:bg-primary hover:text-white transition-colors mt-auto">Inscribirse Ahora</button>
+</div>
+<div class="border-2 border-secondary p-10 flex flex-col items-center text-center bg-white shadow-2xl relative transform md:-translate-y-4">
+<div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-secondary text-white px-6 py-2 font-label-caps text-[10px] uppercase tracking-widest">MÁS ACTIVO</div>
+<span class="font-label-caps text-[10px] text-secondary mb-6 border-b border-secondary pb-2 w-full uppercase tracking-widest">NIVEL 02</span>
+<h3 class="font-headline-sm text-3xl mb-2">Investigador</h3>
+<p class="text-[40px] font-bold mb-8 font-hankenGrotesk text-secondary">$15<span class="text-sm font-normal text-outline">/mes</span></p>
+<ul class="text-lg space-y-4 mb-12 text-on-surface font-body-md">
+<li class="border-b border-outline-variant pb-2">Archivos de Audio EVP Crudos</li>
+<li class="border-b border-outline-variant pb-2">Transmisiones de Inv. en Vivo</li>
+<li class="border-b border-outline-variant pb-2">Derechos de Voto en Casos</li>
+<li class="border-b border-outline-variant pb-2">Acceso Anticipado al Podcast</li>
+</ul>
+<button class="w-full bg-secondary text-white py-4 font-label-caps text-[11px] uppercase tracking-widest hover:bg-primary transition-colors mt-auto">Inscribirse Ahora</button>
+</div>
+<div class="border border-primary p-10 flex flex-col items-center text-center bg-white hover:shadow-xl transition-shadow">
+<span class="font-label-caps text-[10px] text-outline mb-6 border-b border-outline-variant pb-2 w-full uppercase tracking-widest">NIVEL 03</span>
+<h3 class="font-headline-sm text-3xl mb-2">Patrón de lo Desconocido</h3>
+<p class="text-[40px] font-bold mb-8 font-hankenGrotesk">$50<span class="text-sm font-normal text-outline">/mes</span></p>
+<ul class="text-lg space-y-4 mb-12 text-on-surface-variant font-body-md">
+<li class="border-b border-outline-variant pb-2">Impresiones de Evidencia Firmadas</li>
+<li class="border-b border-outline-variant pb-2">Consultas Privadas</li>
+<li class="border-b border-outline-variant pb-2">Tutoría con Inv. Principal</li>
+<li class="border-b border-outline-variant pb-2">Envíos de Dossiers Físicos</li>
+</ul>
+<button class="w-full border border-primary py-4 font-label-caps text-[11px] uppercase tracking-widest hover:bg-primary hover:text-white transition-colors mt-auto">Inscribirse Ahora</button>
+</div>
+</div>
+</section>
+<!-- Shop Section -->
+<section id="secTienda" class="bg-surface py-24 border-b border-outline-variant scroll-mt-36">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-baseline mb-16 border-b border-primary pb-4">
+<h2 class="font-headline-md text-headline-md uppercase tracking-widest">La Tienda</h2>
+<p class="font-label-caps text-[11px] uppercase tracking-widest hover:text-secondary cursor-pointer transition-colors">Explorar Todos los Artículos <span class="material-symbols-outlined text-[14px] align-middle">arrow_forward</span></p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+<div class="group cursor-pointer">
+<div class="bg-white border border-primary p-2 mb-6 relative overflow-hidden">
+<img class="w-full aspect-[3/4] object-cover filter grayscale group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEtJVzmofkiC8VaCXGzrnqKOprY3VV3dIp9bDWzzE5Nnq4DB31VocBWEybJKx-HaMrLHXI86gPsZNuuMym826fywIzGGYUSCr_JTW0P99Sd0jVP17wp56etMYsHTkObE_pz7-HSV2WCaKZ8Dxwf9iLg3f3UJvecZFKBUUxFS1lsHj8H4BWLhmqQKipKzWuJL1IdwCxfd5XJdXbEPqD4B3uTBxH8c7-colmD95KvKD_4KRaqG2LjOJZDb48TqGcagqS4Cv58d8XXrYB"/>
+</div>
+<h4 class="font-label-caps text-[12px] mb-2 uppercase tracking-widest group-hover:text-secondary transition-colors text-center">ARCHIVO 0: Evidencia Recopilada</h4>
+<p class="text-primary font-bold text-center font-hankenGrotesk">$45.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-white border border-primary p-2 mb-6 relative overflow-hidden">
+<img class="w-full aspect-[3/4] object-cover filter grayscale group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvdU17B62ZhxBUFnG2RwzMSi2dYoGm9JbsP_RVww6RR63cFxDjI3W2mE3kJjBNKlcWDgeujGsJscuvQjd5Fh9gxr3i3FOivp6E-9Ngu7Vo_KjVXAZPFK-h3rG5QhbODr0fFx-Kv1SkS4CLgLr-me5Xw2MB77JGUkX0PsC0meb1OxegbfzlqpHA8ZFqe_5SAMAi1eAjrjjMHyN1jcaaMTP56Wo7YCHcwN9Skwbse0nUakqfCDsPFseThteWYPo-Yb4wGGuN6iOt9wJ0"/>
+</div>
+<h4 class="font-label-caps text-[12px] mb-2 uppercase tracking-widest group-hover:text-secondary transition-colors text-center">Set de Impresiones (Niebla)</h4>
+<p class="text-primary font-bold text-center font-hankenGrotesk">$22.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-white border border-primary p-2 mb-6 relative overflow-hidden">
+<img class="w-full aspect-[3/4] object-cover filter grayscale group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVLyjdIXinsXwoQe4cQ_tmY-N1-n78HtQufUV5I5HeP9PDexa0JEBDCewaw3plCDykt8gBd4V_FhXdw_MWYdqeILh6DSc1YfdsG8AO91a7rAtP475XLu8bqaNV_A2or1y0bPNkPwd4oFqooQ86P2H0A4HDoNMXAYSzd1DbpUhzYeoYCVRZyAsPSsKc5_f49EHqRQQVirV8tyW0zD8YRY0FE0XuXMmVEi-Q5yhdNB2u5zmyCd5n5wNGAvEQRJcCkzu-75dYxLsILC09"/>
+</div>
+<h4 class="font-label-caps text-[12px] mb-2 uppercase tracking-widest group-hover:text-secondary transition-colors text-center">Camiseta de Operativo</h4>
+<p class="text-primary font-bold text-center font-hankenGrotesk">$30.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-white border border-primary p-2 mb-6 relative overflow-hidden">
+<img class="w-full aspect-[3/4] object-cover filter grayscale group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyz6_9Wz5NKTN8fXMS5NFwg-G7zn0YY-OxULBy4drrAI5-UyvB2j1SH0ajLzSOQAqX4hpo0ozeMLswqnMJJyS-4WvrC1azdhwm65yIM_2h-di607w29crc5-20z_PbpqbR7opxzqxnyZnbM2f8tfBd8T0-4M7-1Lz8WslC06sPaciJRylaJadRKbvraG_wZPnG_Y6gyi_Gm6pST12vioI48amkuQ205i39aAtA-DdmGIdEVeCwHhXdAghFRQbzNeMpBk_4WtzBbmhg"/>
+</div>
+<h4 class="font-label-caps text-[12px] mb-2 uppercase tracking-widest group-hover:text-secondary transition-colors text-center">Tote Bag Clasificado</h4>
+<p class="text-primary font-bold text-center font-hankenGrotesk">$18.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-b border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+<div class="md:col-span-5 border-r border-outline-variant pr-16">
+<h2 class="font-headline-md text-headline-md mb-8 uppercase tracking-widest">Conecta con lo Desconocido</h2>
+<p class="text-lg text-on-surface-variant mb-12 leading-relaxed">Para consultas de medios, envío de datos o solicitudes de asociación, utilice el protocolo a continuación. Monitoreamos todos los canales 24/7.</p>
+<div class="space-y-10">
+<div>
+<p class="font-label-caps text-[10px] text-secondary uppercase tracking-widest mb-2 border-b border-outline-variant pb-1">CORREO SEGURO</p>
+<p class="font-body-lg text-xl">ops@archivo-invisible.org</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-secondary uppercase tracking-widest mb-4 border-b border-outline-variant pb-1">CANALES DE TRANSMISIÓN</p>
+<div class="flex flex-col gap-4">
+<a class="font-label-caps text-[12px] uppercase tracking-widest hover:text-secondary transition-colors flex items-center justify-between w-48 border border-primary px-4 py-2" href="#">TWITTER <span class="material-symbols-outlined text-[16px]">open_in_new</span></a>
+<a class="font-label-caps text-[12px] uppercase tracking-widest hover:text-secondary transition-colors flex items-center justify-between w-48 border border-primary px-4 py-2" href="#">INSTAGRAM <span class="material-symbols-outlined text-[16px]">open_in_new</span></a>
+<a class="font-label-caps text-[12px] uppercase tracking-widest hover:text-secondary transition-colors flex items-center justify-between w-48 border border-primary px-4 py-2" href="#">YOUTUBE <span class="material-symbols-outlined text-[16px]">open_in_new</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 bg-white border-2 border-primary p-12 shadow-sm relative scanning-focus">
+<div class="absolute top-0 left-0 bg-primary text-white px-4 py-1 font-label-caps text-[10px] uppercase tracking-widest">FORMULARIO DE TRANSMISIÓN</div>
+<form class="space-y-8 mt-6">
+<div class="border-b-2 border-outline-variant focus-within:border-secondary transition-colors pb-2">
+<label class="font-label-caps text-[10px] text-primary uppercase tracking-widest block mb-2">Nombre del Operativo</label>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-xl font-body-md placeholder:text-outline placeholder:italic" placeholder="Nombre Completo" type="text"/>
+</div>
+<div class="border-b-2 border-outline-variant focus-within:border-secondary transition-colors pb-2">
+<label class="font-label-caps text-[10px] text-primary uppercase tracking-widest block mb-2">Tipo de Transmisión</label>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 text-xl font-body-md text-primary">
+<option>Consulta General</option>
+<option>Envío de Evidencia</option>
+<option>Comentarios Técnicos</option>
+<option>Solicitud de Medios</option>
+</select>
+</div>
+<div class="border-b-2 border-outline-variant focus-within:border-secondary transition-colors pb-2">
+<label class="font-label-caps text-[10px] text-primary uppercase tracking-widest block mb-2">Contenido del Mensaje</label>
+<textarea class="w-full bg-transparent border-none p-0 focus:ring-0 text-xl font-body-md placeholder:text-outline placeholder:italic resize-none" placeholder="Reporte detallado..." rows="5"></textarea>
+</div>
+<button class="bg-primary text-white py-4 px-12 font-label-caps text-[11px] uppercase tracking-widest hover:bg-secondary transition-colors float-right" type="submit">ENVIAR TRANSMISIÓN</button>
+<div class="clear-both"></div>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer Section -->
+<footer class="bg-white border-t-8 border-primary text-primary py-16 px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-12 max-w-container-max mx-auto">
+<div class="md:col-span-2">
+<div class="font-headline-md text-3xl font-bold tracking-tighter uppercase mb-6">ARCHIVO_0</div>
+<p class="font-body-md text-lg text-on-surface-variant mb-8 max-w-md leading-relaxed border-l-2 border-secondary pl-4">Dedicado a la preservación de fenómenos inexplicables a través de documentación rigurosa y archivo digital.</p>
+<p class="font-label-caps text-[9px] uppercase tracking-widest text-outline">© 2024 ARCHIVO PARANORMAL. TODOS LOS DERECHOS RESERVADOS.<br/>PROPIEDAD DE [CENSURADO].</p>
+</div>
+<div>
+<h4 class="font-label-caps text-[11px] uppercase tracking-widest border-b border-primary pb-2 mb-6">ACCESO RÁPIDO</h4>
+<div class="flex flex-col gap-4">
+<a class="font-label-caps text-[10px] uppercase tracking-widest hover:text-secondary transition-colors" href="#">Archivos de Casos</a>
+<a class="font-label-caps text-[10px] uppercase tracking-widest hover:text-secondary transition-colors" href="#">Enviar Evidencia</a>
+<a class="font-label-caps text-[10px] uppercase tracking-widest hover:text-secondary transition-colors" href="#">Protocolo de Privacidad</a>
+<a class="font-label-caps text-[10px] uppercase tracking-widest hover:text-secondary transition-colors" href="#">Feed RSS</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-[11px] uppercase tracking-widest border-b border-primary pb-2 mb-6">SUSCRIBIRSE A TRANSMISIONES</h4>
+<div class="flex border-b-2 border-outline-variant focus-within:border-secondary pb-2 mb-4 transition-colors">
+<input class="bg-transparent border-none text-primary placeholder:text-outline placeholder:italic w-full focus:ring-0 p-0 font-body-md text-lg" placeholder="correo@protocolo.net" type="email"/>
+<button class="material-symbols-outlined text-primary hover:text-secondary transition-colors">arrow_forward</button>
+</div>
+<p class="font-label-caps text-[9px] uppercase tracking-widest text-outline">Frecuencia: Reportes Semanales</p>
+</div>
+</footer>
+</main>
+<!-- Contextual FAB (Only for Home Screen logic) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-secondary text-white rounded-none shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40 border-2 border-white group">
+<span class="material-symbols-outlined text-3xl">add_photo_alternate</span>
+<span class="absolute right-20 bg-white text-primary border border-primary px-4 py-2 font-label-caps text-[10px] uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-md">ENVIAR EVIDENCIA</span>
+</button>
+<script>
+// === Ocultar/mostrar navbar al hacer scroll ===
+// Se oculta al bajar y reaparece al subir, para no estorbar la lectura.
+(function() {
+  const nav = document.getElementById('mainNav');
+  let ultimoScroll = 0;
+  const umbral = 10;
+  window.addEventListener('scroll', function() {
+    const actual = window.pageYOffset;
+    if (actual <= 100) { nav.classList.remove('nav-hidden'); ultimoScroll = actual; return; }
+    if (Math.abs(actual - ultimoScroll) < umbral) return;
+    if (actual > ultimoScroll) { nav.classList.add('nav-hidden'); }
+    else { nav.classList.remove('nav-hidden'); }
+    ultimoScroll = actual;
+  });
+})();
+</script>
+</body></html>
