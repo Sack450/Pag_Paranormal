@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Exploraciones | FENOMENOS PARANORMALES</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#000000', secondary: '#b6171e' },
+                    fontFamily: { 'display': ['"EB Garamond"', 'serif'], 'body': ['"Hanken Grotesk"', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="styles.css" rel="stylesheet"/>
+    <style>
+        .nav-hidden { transform: translateY(-100%); }
+        nav { transition: transform 0.35s ease; }
+        #menuMovil { transition: transform 0.3s ease; }
+        #menuMovil.open { transform: translateX(0); }
+        #overlayMenu.visible { display: block; }
+    </style>
+</head>
+
+<body class="bg-white text-black min-h-screen flex flex-col">
+
+    <nav id="mainNav" class="bg-white border-b-2 border-black flex justify-between items-center w-full px-6 lg:px-12 h-20 fixed top-0 z-50">
+        <button id="btnHamburguesa" class="lg:hidden p-2 text-black hover:text-red-700 transition-colors">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+        
+        <a href="index.html" class="font-display text-xl lg:text-2xl font-bold tracking-wider text-black uppercase">
+            FENOMENOS <span class="text-red-700">PARANORMALES</span>
+        </a>
+        
+        <div class="hidden lg:flex gap-6 xl:gap-8 items-center">
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="investigaciones.html">Investigaciones</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="blog.html">Blog</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="noticias.html">Noticias</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="podcast.html">Podcast</a>
+            <a class="font-body text-xs uppercase tracking-widest text-red-700 border-b-2 border-red-700 pb-1" href="exploraciones.html">Exploraciones</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="galeria.html">Galeria</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="donaciones.html">Donaciones</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="tienda.html">Tienda</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="contacto.html">Contacto</a>
+        </div>
+        
+        <div class="flex items-center gap-3">
+            <button class="font-body text-xs uppercase tracking-wider px-4 py-2 bg-black text-white hover:bg-red-700 transition-colors duration-300">Clasificado</button>
+        </div>
+    </nav>
+
+    <div id="overlayMenu" class="hidden fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
+    
+    <div id="menuMovil" class="fixed left-0 top-0 h-screen w-72 bg-white border-r-2 border-black z-50 -translate-x-full lg:hidden flex flex-col pt-6 px-4">
+        
+        <div class="flex justify-between items-center mb-6 px-2 pb-4 border-b border-gray-200">
+            <span class="font-display text-lg font-bold text-black">MENU</span>
+            <button id="btnCerrarMenu" class="p-1 text-black hover:text-red-700 transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div class="space-y-1 overflow-y-auto flex-1">
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="investigaciones.html"><span class="material-symbols-outlined">search</span> Investigaciones</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="blog.html"><span class="material-symbols-outlined">article</span> Blog</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="noticias.html"><span class="material-symbols-outlined">newspaper</span> Noticias</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="podcast.html"><span class="material-symbols-outlined">mic</span> Podcast</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-red-700 border-l-2 border-red-700 bg-gray-100" href="exploraciones.html"><span class="material-symbols-outlined">explore</span> Exploraciones</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="galeria.html"><span class="material-symbols-outlined">photo_library</span> Galeria</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="donaciones.html"><span class="material-symbols-outlined">favorite</span> Donaciones</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="sobremi.html"><span class="material-symbols-outlined">person</span> Sobre Mi</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="tienda.html"><span class="material-symbols-outlined">shopping_bag</span> Tienda</a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="contacto.html"><span class="material-symbols-outlined">mail</span> Contacto</a>
+        </div>
+    </div>
+
+    <main class="flex-grow mt-20">
+        
+        <!-- HERO EXPLORACIONES -->
+        <section class="px-6 lg:px-12 py-16 lg:py-24 max-w-6xl mx-auto border-b border-gray-200">
+            <div class="text-center">
+                <span class="font-body text-xs text-red-700 uppercase tracking-widest mb-4 block">Videos de Campo</span>
+                <h1 class="font-display text-4xl lg:text-6xl mb-6">Exploraciones</h1>
+                <p class="font-body text-lg text-gray-600 max-w-2xl mx-auto">Videos de nuestras investigaciones en lugares abandonados y zonas de actividad paranormal.</p>
+            </div>
+        </section>
+
+        <!-- VIDEOS -->
+        <section class="px-6 lg:px-12 py-16 max-w-6xl mx-auto">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                
+                <article class="group cursor-pointer">
+                    <div class="relative overflow-hidden border-2 border-black mb-4">
+                        <img loading="lazy" class="w-full aspect-video object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&h=340&fit=crop" alt="Exploracion"/>
+                        
+                        <div class="absolute inset-0 bg-red-700/0 group-hover:bg-red-700/30 transition-colors flex items-center justify-center">
+                            <div class="w-16 h-16 bg-red-700 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="font-display text-2xl mb-2">Expedicion: Bosque Prohibido</h3>
+                    <p class="font-body text-gray-600 mb-3">48 horas de vigilancia nocturna capturando anomalias en el infrarrojo. Analisis completo de los sonidos captados.</p>
+                    
+                    <div class="flex items-center gap-4 text-sm text-gray-500">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> 12.5K views</span>
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 45 min</span>
+                    </div>
+                </article>
+                
+                <article class="group cursor-pointer">
+                    <div class="relative overflow-hidden border-2 border-black mb-4">
+                        <img loading="lazy" class="w-full aspect-video object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&h=340&fit=crop" alt="Exploracion"/>
+                        
+                        <div class="absolute inset-0 bg-red-700/0 group-hover:bg-red-700/30 transition-colors flex items-center justify-center">
+                            <div class="w-16 h-16 bg-red-700 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="font-display text-2xl mb-2">Proyecto: Minas Abandonadas</h3>
+                    <p class="font-body text-gray-600 mb-3">Exploracion subterranea con equipo de infrasonido y sensores electromagneticos. Temperaturas registradas: -5°C.</p>
+                    
+                    <div class="flex items-center gap-4 text-sm text-gray-500">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> 8.2K views</span>
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 32 min</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- MAS EXPLORACIONES -->
+            
+            <h2 class="font-display text-2xl mb-8">Mas Exploraciones</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <article class="group cursor-pointer">
+                    <div class="relative overflow-hidden border border-gray-300 hover:border-black transition-colors mb-3">
+                        <img loading="lazy" class="w-full aspect-video object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=400&h=225&fit=crop" alt="Video"/>
+                        
+                        <div class="absolute bottom-2 right-2 bg-black text-white px-2 py-1 text-xs">28 min</div>
+                    </div>
+                    
+                    <h4 class="font-display text-lg">Hospital Psiquiatrico Abandonado</h4>
+                    <p class="font-body text-sm text-gray-600">Investigacion nocturna con multiples equipos.</p>
+                </article>
+                
+                <article class="group cursor-pointer">
+                    <div class="relative overflow-hidden border border-gray-300 hover:border-black transition-colors mb-3">
+                        <img loading="lazy" class="w-full aspect-video object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1505576391880-b3f9d713dc4f?w=400&h=225&fit=crop" alt="Video"/>
+                        
+                        <div class="absolute bottom-2 right-2 bg-black text-white px-2 py-1 text-xs">52 min</div>
+                    </div>
+                    
+                    <h4 class="font-display text-lg">El Monasterio del Silencio</h4>
+                    <p class="font-body text-sm text-gray-600">Documentando fenomenos en el ala este del edificio.</p>
+                </article>
+                
+                <article class="group cursor-pointer">
+                    <div class="relative overflow-hidden border border-gray-300 hover:border-black transition-colors mb-3">
+                        <img loading="lazy" class="w-full aspect-video object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1464146072230-91cabc968266?w=400&h=225&fit=crop" alt="Video"/>
+                        
+                        <div class="absolute bottom-2 right-2 bg-black text-white px-2 py-1 text-xs">19 min</div>
+                    </div>
+                    
+                    <h4 class="font-display text-lg">Cementerio de Oakhaven</h4>
+                    <p class="font-body text-sm text-gray-600">Captura de fenomenos luminosos en camara termica.</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-white py-12 px-6 lg:px-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="font-display text-xl font-bold mb-4">FENOMENOS <span class="text-red-700">PARANORMALES</span></div>
+                <p class="font-body text-sm text-gray-400">© 2024 Fenomenos Paranormales.</p>
+            </div>
+            <div>
+                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Enlaces</h4>
+                <div class="flex flex-col gap-2">
+                    <a href="investigaciones.html" class="font-body text-sm text-gray-400 hover:text-white">Investigaciones</a>
+                    <a href="blog.html" class="font-body text-sm text-gray-400 hover:text-white">Blog</a>
+                    <a href="contacto.html" class="font-body text-sm text-gray-400 hover:text-white">Contacto</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Newsletter</h4>
+                <div class="flex border-b border-gray-600">
+                    <input type="email" placeholder="tu@email.com" class="bg-transparent flex-grow py-2 text-white focus:outline-none"/>
+                    <button class="text-red-700 hover:text-white"><span class="material-symbols-outlined">arrow_forward</span></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btnHamburguesa = document.getElementById('btnHamburguesa');
+        const btnCerrarMenu = document.getElementById('btnCerrarMenu');
+        const menuMovil = document.getElementById('menuMovil');
+        const overlayMenu = document.getElementById('overlayMenu');
+        
+        function abrirMenu() { menuMovil.classList.add('open'); overlayMenu.classList.add('visible'); document.body.style.overflow = 'hidden'; }
+        function cerrarMenu() { menuMovil.classList.remove('open'); overlayMenu.classList.remove('visible'); document.body.style.overflow = ''; }
+        
+        btnHamburguesa.addEventListener('click', abrirMenu);
+        btnCerrarMenu.addEventListener('click', cerrarMenu);
+        overlayMenu.addEventListener('click', cerrarMenu);
+        document.querySelectorAll('#menuMovil a').forEach(link => link.addEventListener('click', cerrarMenu));
+        
+        (function() {
+            const nav = document.getElementById('mainNav');
+            let ultimoScroll = 0;
+            window.addEventListener('scroll', function() {
+                const actual = window.pageYOffset;
+                if (actual <= 100) { nav.classList.remove('nav-hidden'); ultimoScroll = actual; return; }
+                if (Math.abs(actual - ultimoScroll) < 10) return;
+                actual > ultimoScroll ? nav.classList.add('nav-hidden') : nav.classList.remove('nav-hidden');
+                ultimoScroll = actual;
+            });
+        })();
+    </script>
+
+</body>
+</html>

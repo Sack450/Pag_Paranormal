@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Blog | FENOMENOS PARANORMALES</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#000000', secondary: '#b6171e' },
+                    fontFamily: { 'display': ['"EB Garamond"', 'serif'], 'body': ['"Hanken Grotesk"', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="styles.css" rel="stylesheet"/>
+    <style>
+        .nav-hidden { transform: translateY(-100%); }
+        nav { transition: transform 0.35s ease; }
+        #menuMovil { transition: transform 0.3s ease; }
+        #menuMovil.open { transform: translateX(0); }
+        #overlayMenu.visible { display: block; }
+    </style>
+</head>
+
+<body class="bg-white text-black min-h-screen flex flex-col">
+
+    <nav id="mainNav" class="bg-white border-b-2 border-black flex justify-between items-center w-full px-6 lg:px-12 h-20 fixed top-0 z-50">
+        <button id="btnHamburguesa" class="lg:hidden p-2 text-black hover:text-red-700 transition-colors">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+        
+        <a href="index.html" class="font-display text-xl lg:text-2xl font-bold tracking-wider text-black uppercase">
+            FENOMENOS <span class="text-red-700">PARANORMALES</span>
+        </a>
+        
+        <div class="hidden lg:flex gap-6 xl:gap-8 items-center">
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="investigaciones.html">Investigaciones</a>
+            <a class="font-body text-xs uppercase tracking-widest text-red-700 border-b-2 border-red-700 pb-1" href="blog.html">Blog</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="noticias.html">Noticias</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="podcast.html">Podcast</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="exploraciones.html">Exploraciones</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="galeria.html">Galeria</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="donaciones.html">Donaciones</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="tienda.html">Tienda</a>
+            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="contacto.html">Contacto</a>
+        </div>
+        
+        <div class="flex items-center gap-3">
+            <button class="font-body text-xs uppercase tracking-wider px-4 py-2 bg-black text-white hover:bg-red-700 transition-colors duration-300">Clasificado</button>
+        </div>
+    </nav>
+
+    <div id="overlayMenu" class="hidden fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
+    
+    <div id="menuMovil" class="fixed left-0 top-0 h-screen w-72 bg-white border-r-2 border-black z-50 -translate-x-full lg:hidden flex flex-col pt-6 px-4">
+        
+        <div class="flex justify-between items-center mb-6 px-2 pb-4 border-b border-gray-200">
+            <span class="font-display text-lg font-bold text-black">MENU</span>
+            <button id="btnCerrarMenu" class="p-1 text-black hover:text-red-700 transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div class="space-y-1 overflow-y-auto flex-1">
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="investigaciones.html">
+                <span class="material-symbols-outlined">search</span> Investigaciones
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-red-700 border-l-2 border-red-700 bg-gray-100" href="blog.html">
+                <span class="material-symbols-outlined">article</span> Blog
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="noticias.html">
+                <span class="material-symbols-outlined">newspaper</span> Noticias
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="podcast.html">
+                <span class="material-symbols-outlined">mic</span> Podcast
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="exploraciones.html">
+                <span class="material-symbols-outlined">explore</span> Exploraciones
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="galeria.html">
+                <span class="material-symbols-outlined">photo_library</span> Galeria
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="donaciones.html">
+                <span class="material-symbols-outlined">favorite</span> Donaciones
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="sobremi.html">
+                <span class="material-symbols-outlined">person</span> Sobre Mi
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="tienda.html">
+                <span class="material-symbols-outlined">shopping_bag</span> Tienda Libros
+            </a>
+            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="contacto.html">
+                <span class="material-symbols-outlined">mail</span> Contacto
+            </a>
+        </div>
+    </div>
+
+    <main class="flex-grow mt-20">
+        
+        <!-- HERO BLOG -->
+        <section class="px-6 lg:px-12 py-16 lg:py-24 max-w-6xl mx-auto border-b border-gray-200">
+            <div class="text-center">
+                <span class="font-body text-xs text-red-700 uppercase tracking-widest mb-4 block">Articulos y Analisis</span>
+                <h1 class="font-display text-4xl lg:text-6xl mb-6">Blog</h1>
+                <p class="font-body text-lg text-gray-600 max-w-2xl mx-auto">Reflexiones, tecnicas de investigacion y analisis de casos paranormales.</p>
+            </div>
+        </section>
+
+        <!-- ARTICULOS DESTACADOS -->
+        <section class="px-6 lg:px-12 py-16 max-w-6xl mx-auto border-b border-gray-200">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <article class="group bg-white border-2 border-black overflow-hidden hover:border-red-700 transition-colors">
+                    <div class="aspect-video overflow-hidden">
+                        <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=600&h=340&fit=crop" alt="Blog"/>
+                    </div>
+                    <div class="p-6">
+                        <p class="font-body text-[10px] text-red-700 uppercase tracking-wider mb-2">Tecnicas | Hace 3 dias</p>
+                        <h2 class="font-display text-2xl mb-4">Como capturar evidencia EVP de calidad</h2>
+                        <p class="font-body text-gray-600 mb-6">Guia completa sobre equipos, configuraciones y metodologias para capturar voces electronicas de manera efectiva durante investigaciones paranormales.</p>
+                        <a href="#" class="inline-flex items-center gap-2 font-body text-xs uppercase tracking-wider text-red-700 hover:text-black transition-colors">
+                            Leer articulo <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="group bg-white border-2 border-black overflow-hidden hover:border-red-700 transition-colors">
+                    <div class="aspect-video overflow-hidden">
+                        <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?w=600&h=340&fit=crop" alt="Blog"/>
+                    </div>
+                    <div class="p-6">
+                        <p class="font-body text-[10px] text-red-700 uppercase tracking-wider mb-2">Teoria | Hace 1 semana</p>
+                        <h2 class="font-display text-2xl mb-4">La ciencia detras de las apariciones</h2>
+                        <p class="font-body text-gray-600 mb-6">Analisis cientifico de los fenomenos de manifestacion espectral y las hipotesis actuales sobre su naturaleza fisica.</p>
+                        <a href="#" class="inline-flex items-center gap-2 font-body text-xs uppercase tracking-wider text-red-700 hover:text-black transition-colors">
+                            Leer articulo <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- MAS ARTICULOS -->
+        <section class="px-6 lg:px-12 py-16 max-w-6xl mx-auto bg-gray-50">
+            <h2 class="font-display text-2xl mb-12">Mas Articulos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <article class="group bg-white border border-gray-300 p-6 hover:border-black transition-colors">
+                    <p class="font-body text-[10px] text-red-700 uppercase tracking-wider mb-2">Equipos</p>
+                    <h3 class="font-display text-lg mb-3">Guia de camaras termicas para cazafantasmas</h3>
+                    <p class="font-body text-sm text-gray-600 mb-4">Comparativa y recomendaciones de equipos termograficos para detectar anomalias.</p>
+                    <span class="font-body text-xs text-gray-400">Hace 2 semanas</span>
+                </article>
+                
+                <article class="group bg-white border border-gray-300 p-6 hover:border-black transition-colors">
+                    <p class="font-body text-[10px] text-red-700 uppercase tracking-wider mb-2">Historia</p>
+                    <h3 class="font-display text-lg mb-3">Los casos mas famosos de la historia</h3>
+                    <p class="font-body text-sm text-gray-600 mb-4">Repaso de las investigaciones paranormales mas documentadas de todos los tiempos.</p>
+                    <span class="font-body text-xs text-gray-400">Hace 3 semanas</span>
+                </article>
+                
+                <article class="group bg-white border border-gray-300 p-6 hover:border-black transition-colors">
+                    <p class="font-body text-[10px] text-red-700 uppercase tracking-wider mb-2">Fenomenos</p>
+                    <h3 class="font-display text-lg mb-3">Entendiendo el efecto poltergeist</h3>
+                    <p class="font-body text-sm text-gray-600 mb-4">Analisis profundo de los fenomenos de ruidos y movimientos de objetos.</p>
+                    <span class="font-body text-xs text-gray-400">Hace 1 mes</span>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-white py-12 px-6 lg:px-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="font-display text-xl font-bold mb-4">FENOMENOS <span class="text-red-700">PARANORMALES</span></div>
+                <p class="font-body text-sm text-gray-400 mb-4">Dedicados a la investigacion y documentacion de fenomenos inexplicables desde 2010.</p>
+                <p class="font-body text-xs text-gray-500">© 2024 Fenomenos Paranormales.</p>
+            </div>
+            <div>
+                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Enlaces Rapidos</h4>
+                <div class="flex flex-col gap-2">
+                    <a href="investigaciones.html" class="font-body text-sm text-gray-400 hover:text-white">Investigaciones</a>
+                    <a href="blog.html" class="font-body text-sm text-gray-400 hover:text-white">Blog</a>
+                    <a href="podcast.html" class="font-body text-sm text-gray-400 hover:text-white">Podcast</a>
+                    <a href="contacto.html" class="font-body text-sm text-gray-400 hover:text-white">Contacto</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Newsletter</h4>
+                <div class="flex border-b border-gray-600">
+                    <input type="email" placeholder="tu@email.com" class="bg-transparent flex-grow py-2 text-white focus:outline-none"/>
+                    <button class="text-red-700 hover:text-white">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btnHamburguesa = document.getElementById('btnHamburguesa');
+        const btnCerrarMenu = document.getElementById('btnCerrarMenu');
+        const menuMovil = document.getElementById('menuMovil');
+        const overlayMenu = document.getElementById('overlayMenu');
+        
+        function abrirMenu() { menuMovil.classList.add('open'); overlayMenu.classList.add('visible'); document.body.style.overflow = 'hidden'; }
+        function cerrarMenu() { menuMovil.classList.remove('open'); overlayMenu.classList.remove('visible'); document.body.style.overflow = ''; }
+        
+        btnHamburguesa.addEventListener('click', abrirMenu);
+        btnCerrarMenu.addEventListener('click', cerrarMenu);
+        overlayMenu.addEventListener('click', cerrarMenu);
+        document.querySelectorAll('#menuMovil a').forEach(link => link.addEventListener('click', cerrarMenu));
+        
+        (function() {
+            const nav = document.getElementById('mainNav');
+            let ultimoScroll = 0;
+            window.addEventListener('scroll', function() {
+                const actual = window.pageYOffset;
+                if (actual <= 100) { nav.classList.remove('nav-hidden'); ultimoScroll = actual; return; }
+                if (Math.abs(actual - ultimoScroll) < 10) return;
+                actual > ultimoScroll ? nav.classList.add('nav-hidden') : nav.classList.remove('nav-hidden');
+                ultimoScroll = actual;
+            });
+        })();
+    </script>
+
+</body>
+</html>
