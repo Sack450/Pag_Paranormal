@@ -1,206 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Sobre Mi | FENOMENOS PARANORMALES</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: { primary: '#000000', secondary: '#b6171e' },
-                    fontFamily: { 'display': ['"EB Garamond"', 'serif'], 'body': ['"Hanken Grotesk"', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
-    <link href="styles.css" rel="stylesheet"/>
-    <style>
-        .nav-hidden { transform: translateY(-100%); }
-        nav { transition: transform 0.35s ease; }
-        #menuMovil { transition: transform 0.3s ease; }
-        #menuMovil.open { transform: translateX(0); }
-        #overlayMenu.visible { display: block; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre Mí | Investigador Oxlack Paranormal</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=IM+Fell+English:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
+<body>
 
-<body class="bg-white text-black min-h-screen flex flex-col">
+<!-- NAV SIMPLIFICADO -->
+<nav>
+  <a href="index.html" class="btn-secondary" style="margin-left: 2rem;"><i class="fas fa-arrow-left"></i> Regresar</a>
+  <a class="nav-logo" href="index.html">INVESTIGADOR <span>&#10013;</span> OXLACK</a>
+  <div></div>
+</nav>
 
-    <nav id="mainNav" class="bg-white border-b-2 border-black flex justify-between items-center w-full px-6 lg:px-12 h-20 fixed top-0 z-50">
-        <button id="btnHamburguesa" class="lg:hidden p-2 text-black hover:text-red-700 transition-colors">
-            <span class="material-symbols-outlined text-2xl">menu</span>
-        </button>
-        
-        <a href="index.html" class="font-display text-xl lg:text-2xl font-bold tracking-wider text-black uppercase">
-            FENOMENOS <span class="text-red-700">PARANORMALES</span>
-        </a>
-        
-        <div class="hidden lg:flex gap-6 xl:gap-8 items-center">
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="investigaciones.html">Investigaciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="blog.html">Blog</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="noticias.html">Noticias</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="podcast.html">Podcast</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="exploraciones.html">Exploraciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="galeria.html">Galeria</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="donaciones.html">Donaciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="tienda.html">Tienda</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="contacto.html">Contacto</a>
-        </div>
-        
-        <div class="flex items-center gap-3">
-            <button class="font-body text-xs uppercase tracking-wider px-4 py-2 bg-black text-white hover:bg-red-700 transition-colors duration-300">Clasificado</button>
-        </div>
-    </nav>
-
-    <div id="overlayMenu" class="hidden fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
-    
-    <div id="menuMovil" class="fixed left-0 top-0 h-screen w-72 bg-white border-r-2 border-black z-50 -translate-x-full lg:hidden flex flex-col pt-6 px-4">
-        
-        <div class="flex justify-between items-center mb-6 px-2 pb-4 border-b border-gray-200">
-            <span class="font-display text-lg font-bold text-black">MENU</span>
-            <button id="btnCerrarMenu" class="p-1 text-black hover:text-red-700 transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        
-        <div class="space-y-1 overflow-y-auto flex-1">
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="investigaciones.html"><span class="material-symbols-outlined">search</span> Investigaciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="blog.html"><span class="material-symbols-outlined">article</span> Blog</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="noticias.html"><span class="material-symbols-outlined">newspaper</span> Noticias</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="podcast.html"><span class="material-symbols-outlined">mic</span> Podcast</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="exploraciones.html"><span class="material-symbols-outlined">explore</span> Exploraciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="galeria.html"><span class="material-symbols-outlined">photo_library</span> Galeria</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="donaciones.html"><span class="material-symbols-outlined">favorite</span> Donaciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-red-700 border-l-2 border-red-700 bg-gray-100" href="sobremi.html"><span class="material-symbols-outlined">person</span> Sobre Mi</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="tienda.html"><span class="material-symbols-outlined">shopping_bag</span> Tienda</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="contacto.html"><span class="material-symbols-outlined">mail</span> Contacto</a>
-        </div>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">&#10013; Conoce al Investigador</span>
+      <h2 class="section-title">SOBRE <span class="rojo">MÍ</span></h2>
+      <div class="section-line"><i class="fas fa-user"></i></div>
     </div>
-
-    <main class="flex-grow mt-20">
-        
-        <section class="px-6 lg:px-12 py-16 lg:py-24 max-w-6xl mx-auto">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <div class="order-2 lg:order-1">
-                    <span class="font-body text-xs text-red-700 uppercase tracking-widest mb-4 block">El Investigador</span>
-                    
-                    <h1 class="font-display text-4xl lg:text-5xl mb-6">Sobre Mi</h1>
-                    
-                    <div class="space-y-4 text-gray-600">
-                        
-                        <p class="font-body text-lg italic border-l-4 border-red-700 pl-4">"Lo paranormal no es lo imposible, es lo que aun no hemos podido explicar."</p>
-                        
-                        <p class="font-body">Soy un investigador paranormal con mas de 15 años de experiencia en el campo. Mi enfoque combina metodologia cientifica con respeto por las tradiciones y las experiencias vividas.</p>
-                        
-                        <p class="font-body">A lo largo de mi carrera he investigado cientos de casos, desde casas embrujadas hasta fenomenos de poltergeist, siempre buscando respuestas basadas en evidencia.</p>
-                        
-                        <p class="font-body">Mi formacion incluye estudios en psicologia, fisica y cinematografia, lo que me permite abordar cada caso desde multiples perspectivas.</p>
-                    </div>
-                    
-                    <div class="mt-8 flex gap-4">
-                        <img alt="Firma" class="h-16 opacity-70" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Signature_sample.svg"/>
-                    </div>
-                </div>
-                
-                
-                <div class="order-1 lg:order-2">
-                    <div class="border-4 border-black p-2">
-                        <img loading="lazy" class="w-full aspect-[4/5] object-cover filter grayscale" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=625&fit=crop" alt="Investigador"/>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ESTADISTICAS -->
-        
-        <section class="px-6 lg:px-12 py-16 max-w-6xl mx-auto bg-gray-50">
-            
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                
-                <div>
-                    <p class="font-display text-4xl text-red-700 mb-2">15+</p>
-                    
-                    <p class="font-body text-sm uppercase tracking-wider">Años de Experiencia</p>
-                </div>
-                
-                <div>
-                    <p class="font-display text-4xl text-red-700 mb-2">200+</p>
-                    
-                    <p class="font-body text-sm uppercase tracking-wider">Casos Investigados</p>
-                </div>
-                
-                <div>
-                    <p class="font-display text-4xl text-red-700 mb-2">50+</p>
-                    
-                    <p class="font-body text-sm uppercase tracking-wider">Episodios Podcast</p>
-                </div>
-                
-                <div>
-                    <p class="font-display text-4xl text-red-700 mb-2">10K+</p>
-                    
-                    <p class="font-body text-sm uppercase tracking-wider">Seguidores</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-black text-white py-12 px-6 lg:px-12">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <div class="font-display text-xl font-bold mb-4">FENOMENOS <span class="text-red-700">PARANORMALES</span></div>
-                <p class="font-body text-sm text-gray-400">© 2024 Fenomenos Paranormales.</p>
-            </div>
-            <div>
-                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Enlaces</h4>
-                <div class="flex flex-col gap-2">
-                    <a href="investigaciones.html" class="font-body text-sm text-gray-400 hover:text-white">Investigaciones</a>
-                    <a href="blog.html" class="font-body text-sm text-gray-400 hover:text-white">Blog</a>
-                    <a href="contacto.html" class="font-body text-sm text-gray-400 hover:text-white">Contacto</a>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Newsletter</h4>
-                <div class="flex border-b border-gray-600">
-                    <input type="email" placeholder="tu@email.com" class="bg-transparent flex-grow py-2 text-white focus:outline-none"/>
-                    <button class="text-red-700 hover:text-white"><span class="material-symbols-outlined">arrow_forward</span></button>
-                </div>
-            </div>
+    
+    <div class="sobremi-content">
+      <div class="sobremi-img">
+        <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Investigador Oxlack" loading="lazy">
+      </div>
+      <div class="sobremi-texto">
+        <h3>Investigador Oxlack</h3>
+        <p>Desde 2015 me dedico a investigar fenómenos paranormales en México y Latinoamérica. Mi misión es documentar lo inexplicable y compartir estas experiencias con el mundo.</p>
+        <p>He investigado más de 200 casos, desde casas embrujadas hasta cementerios abandonados. Cada caso es una nueva oportunidad de descubrir la verdad detrás de lo desconocido.</p>
+        <div class="stats">
+          <div class="stat"><span class="num">200+</span><span class="label">Casos</span></div>
+          <div class="stat"><span class="num">50+</span><span class="label">Videos</span></div>
+          <div class="stat"><span class="num">100K+</span><span class="label">Seguidores</span></div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        const btnHamburguesa = document.getElementById('btnHamburguesa');
-        const btnCerrarMenu = document.getElementById('btnCerrarMenu');
-        const menuMovil = document.getElementById('menuMovil');
-        const overlayMenu = document.getElementById('overlayMenu');
-        
-        function abrirMenu() { menuMovil.classList.add('open'); overlayMenu.classList.add('visible'); document.body.style.overflow = 'hidden'; }
-        function cerrarMenu() { menuMovil.classList.remove('open'); overlayMenu.classList.remove('visible'); document.body.style.overflow = ''; }
-        
-        btnHamburguesa.addEventListener('click', abrirMenu);
-        btnCerrarMenu.addEventListener('click', cerrarMenu);
-        overlayMenu.addEventListener('click', cerrarMenu);
-        document.querySelectorAll('#menuMovil a').forEach(link => link.addEventListener('click', cerrarMenu));
-        
-        (function() {
-            const nav = document.getElementById('mainNav');
-            let ultimoScroll = 0;
-            window.addEventListener('scroll', function() {
-                const actual = window.pageYOffset;
-                if (actual <= 100) { nav.classList.remove('nav-hidden'); ultimoScroll = actual; return; }
-                if (Math.abs(actual - ultimoScroll) < 10) return;
-                actual > ultimoScroll ? nav.classList.add('nav-hidden') : nav.classList.remove('nav-hidden');
-                ultimoScroll = actual;
-            });
-        })();
-    </script>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">INVESTIGADOR <span>&#10013;</span> OXLACK</div>
+      <p class="footer-text">Investigando lo inexplicable desde 2015...</p>
+      <p class="copyright">&copy; 2025 Investigador Oxlack Paranormal</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

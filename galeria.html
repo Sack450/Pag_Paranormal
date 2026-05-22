@@ -1,258 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Galeria | FENOMENOS PARANORMALES</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: { primary: '#000000', secondary: '#b6171e' },
-                    fontFamily: { 'display': ['"EB Garamond"', 'serif'], 'body': ['"Hanken Grotesk"', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
-    <link href="styles.css" rel="stylesheet"/>
-    <style>
-        .nav-hidden { transform: translateY(-100%); }
-        nav { transition: transform 0.35s ease; }
-        #menuMovil { transition: transform 0.3s ease; }
-        #menuMovil.open { transform: translateX(0); }
-        #overlayMenu.visible { display: block; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería | Investigador Oxlack Paranormal</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=IM+Fell+English:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
+<body>
 
-<body class="bg-white text-black min-h-screen flex flex-col">
+<!-- NAV SIMPLIFICADO -->
+<nav>
+  <a href="index.html" class="btn-secondary" style="margin-left: 2rem;"><i class="fas fa-arrow-left"></i> Regresar</a>
+  <a class="nav-logo" href="index.html">INVESTIGADOR <span>&#10013;</span> OXLACK</a>
+  <div></div>
+</nav>
 
-    <nav id="mainNav" class="bg-white border-b-2 border-black flex justify-between items-center w-full px-6 lg:px-12 h-20 fixed top-0 z-50">
-        <button id="btnHamburguesa" class="lg:hidden p-2 text-black hover:text-red-700 transition-colors">
-            <span class="material-symbols-outlined text-2xl">menu</span>
-        </button>
-        
-        <a href="index.html" class="font-display text-xl lg:text-2xl font-bold tracking-wider text-black uppercase">
-            FENOMENOS <span class="text-red-700">PARANORMALES</span>
-        </a>
-        
-        <div class="hidden lg:flex gap-6 xl:gap-8 items-center">
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="investigaciones.html">Investigaciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="blog.html">Blog</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="noticias.html">Noticias</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="podcast.html">Podcast</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="exploraciones.html">Exploraciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-red-700 border-b-2 border-red-700 pb-1" href="galeria.html">Galeria</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="donaciones.html">Donaciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="tienda.html">Tienda</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="contacto.html">Contacto</a>
-        </div>
-        
-        <div class="flex items-center gap-3">
-            <button class="font-body text-xs uppercase tracking-wider px-4 py-2 bg-black text-white hover:bg-red-700 transition-colors duration-300">Clasificado</button>
-        </div>
-    </nav>
-
-    <div id="overlayMenu" class="hidden fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
-    
-    <div id="menuMovil" class="fixed left-0 top-0 h-screen w-72 bg-white border-r-2 border-black z-50 -translate-x-full lg:hidden flex flex-col pt-6 px-4">
-        
-        <div class="flex justify-between items-center mb-6 px-2 pb-4 border-b border-gray-200">
-            <span class="font-display text-lg font-bold text-black">MENU</span>
-            <button id="btnCerrarMenu" class="p-1 text-black hover:text-red-700 transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        
-        <div class="space-y-1 overflow-y-auto flex-1">
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="investigaciones.html"><span class="material-symbols-outlined">search</span> Investigaciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="blog.html"><span class="material-symbols-outlined">article</span> Blog</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="noticias.html"><span class="material-symbols-outlined">newspaper</span> Noticias</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="podcast.html"><span class="material-symbols-outlined">mic</span> Podcast</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="exploraciones.html"><span class="material-symbols-outlined">explore</span> Exploraciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-red-700 border-l-2 border-red-700 bg-gray-100" href="galeria.html"><span class="material-symbols-outlined">photo_library</span> Galeria</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="donaciones.html"><span class="material-symbols-outlined">favorite</span> Donaciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="sobremi.html"><span class="material-symbols-outlined">person</span> Sobre Mi</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="tienda.html"><span class="material-symbols-outlined">shopping_bag</span> Tienda</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="contacto.html"><span class="material-symbols-outlined">mail</span> Contacto</a>
-        </div>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">&#10013; Memorias</span>
+      <h2 class="section-title">GALERÍA <span class="rojo">PARANORMAL</span></h2>
+      <div class="section-line"><i class="fas fa-camera"></i></div>
     </div>
-
-    <main class="flex-grow mt-20">
-        
-        <!-- HERO GALERIA -->
-        <section class="px-6 lg:px-12 py-16 lg:py-24 max-w-6xl mx-auto border-b border-gray-200">
-            <div class="text-center">
-                <span class="font-body text-xs text-red-700 uppercase tracking-widest mb-4 block">Fotografias</span>
-                <h1 class="font-display text-4xl lg:text-6xl mb-6">Galeria</h1>
-                <p class="font-body text-lg text-gray-600 max-w-2xl mx-auto">Fotos de nuestro equipo de investigadores y de nuestros seguidores.</p>
-            </div>
-        </section>
-
-        <!-- TABS -->
-        <section class="px-6 lg:px-12 py-16 max-w-6xl mx-auto">
-            
-            <div class="flex justify-center mb-12">
-                <div class="inline-flex border-2 border-black">
-                    <button id="tabInvestigadores" class="px-8 py-3 font-body text-xs uppercase tracking-wider bg-black text-white">Investigadores</button>
-                    <button id="tabFans" class="px-8 py-3 font-body text-xs uppercase tracking-wider bg-white text-black hover:bg-gray-100">Fans</button>
-                </div>
-            </div>
-
-            <!-- GALERIA INVESTIGADORES -->
-            
-            <div id="galeriaInvestigadores" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Investigador"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="Investigador"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="Investigador"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="Investigador"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop" alt="Investigador"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop" alt="Investigador"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop" alt="Investigador"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" alt="Investigador"/>
-                </div>
-            </div>
-
-            <!-- GALERIA FANS -->
-            
-            <div id="galeriaFans" class="hidden grid grid-cols-2 md:grid-cols-4 gap-4">
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&h=300&fit=crop" alt="Fan"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&h=300&fit=crop" alt="Fan"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop" alt="Fan"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&h=300&fit=crop" alt="Fan"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=300&h=300&fit=crop" alt="Fan"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Fan"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=300&fit=crop" alt="Fan"/>
-                </div>
-                
-                <div class="aspect-square border-2 border-black p-2 bg-white group cursor-pointer overflow-hidden">
-                    <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?w=300&h=300&fit=crop" alt="Fan"/>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-black text-white py-12 px-6 lg:px-12">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <div class="font-display text-xl font-bold mb-4">FENOMENOS <span class="text-red-700">PARANORMALES</span></div>
-                <p class="font-body text-sm text-gray-400">© 2024 Fenomenos Paranormales.</p>
-            </div>
-            <div>
-                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Enlaces</h4>
-                <div class="flex flex-col gap-2">
-                    <a href="investigaciones.html" class="font-body text-sm text-gray-400 hover:text-white">Investigaciones</a>
-                    <a href="blog.html" class="font-body text-sm text-gray-400 hover:text-white">Blog</a>
-                    <a href="contacto.html" class="font-body text-sm text-gray-400 hover:text-white">Contacto</a>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Newsletter</h4>
-                <div class="flex border-b border-gray-600">
-                    <input type="email" placeholder="tu@email.com" class="bg-transparent flex-grow py-2 text-white focus:outline-none"/>
-                    <button class="text-red-700 hover:text-white"><span class="material-symbols-outlined">arrow_forward</span></button>
-                </div>
-            </div>
+    
+    <!-- Categoría: Fotos con Fans -->
+    <div class="galeria-categoria">
+      <h3 class="categoria-titulo"><i class="fas fa-users"></i> Fotos con Fans</h3>
+      <div class="galeria-grid">
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Con Fans" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
         </div>
-    </footer>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_56_40 p.m..png" alt="Con Fans" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_59_54 p.m..png" alt="Con Fans" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Categoría: Fotos con Investigadores -->
+    <div class="galeria-categoria">
+      <h3 class="categoria-titulo"><i class="fas fa-user-secret"></i> Fotos con Investigadores</h3>
+      <div class="galeria-grid">
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Investigadores" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_56_40 p.m..png" alt="Investigadores" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_59_54 p.m..png" alt="Investigadores" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        const btnHamburguesa = document.getElementById('btnHamburguesa');
-        const btnCerrarMenu = document.getElementById('btnCerrarMenu');
-        const menuMovil = document.getElementById('menuMovil');
-        const overlayMenu = document.getElementById('overlayMenu');
-        
-        function abrirMenu() { menuMovil.classList.add('open'); overlayMenu.classList.add('visible'); document.body.style.overflow = 'hidden'; }
-        function cerrarMenu() { menuMovil.classList.remove('open'); overlayMenu.classList.remove('visible'); document.body.style.overflow = ''; }
-        
-        btnHamburguesa.addEventListener('click', abrirMenu);
-        btnCerrarMenu.addEventListener('click', cerrarMenu);
-        overlayMenu.addEventListener('click', cerrarMenu);
-        document.querySelectorAll('#menuMovil a').forEach(link => link.addEventListener('click', cerrarMenu));
-        
-        // Tabs
-        const tabInvestigadores = document.getElementById('tabInvestigadores');
-        const tabFans = document.getElementById('tabFans');
-        const galeriaInvestigadores = document.getElementById('galeriaInvestigadores');
-        const galeriaFans = document.getElementById('galeriaFans');
-        
-        tabInvestigadores.addEventListener('click', () => {
-            galeriaInvestigadores.classList.remove('hidden');
-            galeriaFans.classList.add('hidden');
-            tabInvestigadores.classList.add('bg-black', 'text-white');
-            tabInvestigadores.classList.remove('bg-white', 'text-black');
-            tabFans.classList.add('bg-white', 'text-black');
-            tabFans.classList.remove('bg-black', 'text-white');
-        });
-        
-        tabFans.addEventListener('click', () => {
-            galeriaInvestigadores.classList.add('hidden');
-            galeriaFans.classList.remove('hidden');
-            tabFans.classList.add('bg-black', 'text-white');
-            tabFans.classList.remove('bg-white', 'text-black');
-            tabInvestigadores.classList.add('bg-white', 'text-black');
-            tabInvestigadores.classList.remove('bg-black', 'text-white');
-        });
-        
-        (function() {
-            const nav = document.getElementById('mainNav');
-            let ultimoScroll = 0;
-            window.addEventListener('scroll', function() {
-                const actual = window.pageYOffset;
-                if (actual <= 100) { nav.classList.remove('nav-hidden'); ultimoScroll = actual; return; }
-                if (Math.abs(actual - ultimoScroll) < 10) return;
-                actual > ultimoScroll ? nav.classList.add('nav-hidden') : nav.classList.remove('nav-hidden');
-                ultimoScroll = actual;
-            });
-        })();
-    </script>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">INVESTIGADOR <span>&#10013;</span> OXLACK</div>
+      <p class="footer-text">Investigando lo inexplicable desde 2015...</p>
+      <p class="copyright">&copy; 2025 Investigador Oxlack Paranormal</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

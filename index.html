@@ -1,405 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>FENOMENOS PARANORMALES | Inicio</title>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    
-    <!-- Configuración Tailwind -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#000000',
-                        secondary: '#b6171e',
-                        background: '#ffffff',
-                        surface: '#f5f5f5',
-                        'on-primary': '#ffffff',
-                        'on-background': '#000000',
-                        'outline': '#d1d1d1',
-                        'outline-variant': '#e5e5e5',
-                    },
-                    fontFamily: {
-                        'display': ['"EB Garamond"', 'serif'],
-                        'body': ['"Hanken Grotesk"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- CSS Personalizado -->
-    <link href="styles.css" rel="stylesheet"/>
-    
-    <style>
-        .nav-hidden { transform: translateY(-100%); }
-        nav { transition: transform 0.35s ease; }
-        #menuMovil { transition: transform 0.3s ease; }
-        #menuMovil.open { transform: translateX(0); }
-        #overlayMenu.visible { display: block; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investigador Oxlack Paranormal | Inicio</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=IM+Fell+English:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
+<body>
 
-<body class="bg-white text-black min-h-screen flex flex-col">
+<!-- NAV SIMPLIFICADO -->
+<nav>
+  <a class="nav-logo" href="index.html">INVESTIGADOR <span>&#10013;</span> OXLACK</a>
+</nav>
 
-    <!-- ============================================
-         NAVEGACIÓN SUPERIOR
-         ============================================ -->
-    <nav id="mainNav" class="bg-white border-b-2 border-black flex justify-between items-center w-full px-6 lg:px-12 h-20 fixed top-0 z-50">
-        
-        <!-- Botón hamburguesa (móvil) -->
-        <button id="btnHamburguesa" class="lg:hidden p-2 text-black hover:text-red-700 transition-colors">
-            <span class="material-symbols-outlined text-2xl">menu</span>
-        </button>
-        
-        <!-- Logo -->
-        <a href="index.html" class="font-display text-xl lg:text-2xl font-bold tracking-wider text-black uppercase">
-            FENOMENOS <span class="text-red-700">PARANORMALES</span>
-        </a>
-        
-        <!-- Menú Desktop -->
-        <div class="hidden lg:flex gap-6 xl:gap-8 items-center">
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="investigaciones.html">Investigaciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="blog.html">Blog</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="noticias.html">Noticias</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="podcast.html">Podcast</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="exploraciones.html">Exploraciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="galeria.html">Galeria</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="donaciones.html">Donaciones</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="tienda.html">Tienda</a>
-            <a class="font-body text-xs uppercase tracking-widest text-black hover:text-red-700 border-b-2 border-transparent hover:border-red-700 transition-all pb-1" href="contacto.html">Contacto</a>
-        </div>
-        
-        <!-- Botón Clasificado -->
-        <div class="flex items-center gap-3">
-            <button class="font-body text-xs uppercase tracking-wider px-4 py-2 bg-black text-white hover:bg-red-700 transition-colors duration-300">Clasificado</button>
-        </div>
-    </nav>
-
-    <!-- OVERLAY Y MENÚ MÓVIL -->
-    <div id="overlayMenu" class="hidden fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
-    
-    <div id="menuMovil" class="fixed left-0 top-0 h-screen w-72 bg-white border-r-2 border-black z-50 -translate-x-full lg:hidden flex flex-col pt-6 px-4">
-        
-        <div class="flex justify-between items-center mb-6 px-2 pb-4 border-b border-gray-200">
-            <span class="font-display text-lg font-bold text-black">MENU</span>
-            <button id="btnCerrarMenu" class="p-1 text-black hover:text-red-700 transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        
-        <div class="space-y-1 overflow-y-auto flex-1">
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="investigaciones.html"><span class="material-symbols-outlined">search</span> Investigaciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="blog.html"><span class="material-symbols-outlined">article</span> Blog</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="noticias.html"><span class="material-symbols-outlined">newspaper</span> Noticias</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="podcast.html"><span class="material-symbols-outlined">mic</span> Podcast</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="exploraciones.html"><span class="material-symbols-outlined">explore</span> Exploraciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="galeria.html"><span class="material-symbols-outlined">photo_library</span> Galeria</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="donaciones.html"><span class="material-symbols-outlined">favorite</span> Donaciones</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="sobremi.html"><span class="material-symbols-outlined">person</span> Sobre Mi</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="tienda.html"><span class="material-symbols-outlined">shopping_bag</span> Tienda</a>
-            <a class="flex items-center gap-3 p-3 font-body text-xs uppercase tracking-wider text-black hover:bg-gray-100 hover:text-red-700 border-l-2 border-transparent hover:border-red-700 transition-all" href="contacto.html"><span class="material-symbols-outlined">mail</span> Contacto</a>
-        </div>
+<!-- INICIO / HERO -->
+<section id="inicio">
+  <div class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">&#10013; Investigador Paranormal &#10013;</p>
+      <h1 class="hero-title">INVESTIGADOR OXLACK</h1>
+      <p class="hero-subtitle">"No busco fantasmas. Busco la verdad que nadie quiere encontrar."</p>
+      <div class="hero-buttons">
+        <a href="#contenido" class="btn-primary">Explorar Contenido</a>
+        <a href="contacto.html" class="btn-secondary">Contactar</a>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="flex-grow mt-20">
-        
-        <!-- HERO -->
-        <section class="px-6 lg:px-12 py-16 lg:py-24 max-w-6xl mx-auto border-b border-gray-200">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-                
-                <div>
-                    <span class="font-body text-xs text-red-700 uppercase tracking-widest mb-4 block">Investigacion Paranormal</span>
-                    
-                    <h1 class="font-display text-4xl lg:text-6xl mb-6 leading-none">Fenomenos <br/><span class="text-red-700">Paranormales</span></h1>
-                    
-                    <p class="font-body text-lg text-gray-600 max-w-md mb-8">
-                        Explorando lo inexplicable. Documentamos y analizamos fenomenos paranormales con un enfoque cientifico y riguroso.
-                    </p>
-                    
-                    <div class="flex gap-4 flex-wrap">
-                        <a href="investigaciones.html" class="inline-flex items-center px-6 py-3 bg-black text-white font-body text-xs uppercase tracking-wider hover:bg-red-700 transition-colors">
-                            Ver Investigaciones
-                        </a>
-                        
-                        <a href="contacto.html" class="inline-flex items-center px-6 py-3 border-2 border-black text-black font-body text-xs uppercase tracking-wider hover:bg-black hover:text-white transition-colors">
-                            Contactar
-                        </a>
-                    </div>
-                </div>
-                
-                
-                <div class="relative">
-                    <div class="border-[8px] border-black relative overflow-hidden">
-                        <img loading="lazy" class="w-full aspect-[4/5] object-cover filter grayscale hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=600&h=750&fit=crop" alt="Imagen paranormal"/>
-                        
-                        <div class="absolute bottom-4 right-4 bg-black text-white px-3 py-1 font-body text-[10px] uppercase tracking-wider">CASO #001</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- CONTENIDO PRINCIPAL -->
+<div id="contenido">
 
-        <!-- SECCIONES DESTACADAS -->
-        <section class="px-6 lg:px-12 py-16 max-w-6xl mx-auto">
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <a href="investigaciones.html" class="group border-2 border-black p-8 hover:border-red-700 hover:bg-gray-50 transition-all">
-                    <span class="material-symbols-outlined text-4xl mb-4 block">search</span>
-                    
-                    <h2 class="font-display text-xl mb-2">Investigaciones</h2>
-                    
-                    <p class="font-body text-sm text-gray-600">Casos activos y cerrados documentados con evidencia.</p>
-                </a>
-                
-                
-                <a href="podcast.html" class="group border-2 border-black p-8 hover:border-red-700 hover:bg-gray-50 transition-all">
-                    <span class="material-symbols-outlined text-4xl mb-4 block">mic</span>
-                    
-                    <h2 class="font-display text-xl mb-2">Podcast</h2>
-                    
-                    <p class="font-body text-sm text-gray-600">Episodios semanales sobre fenomenos paranormales.</p>
-                </a>
-                
-                
-                <a href="exploraciones.html" class="group border-2 border-black p-8 hover:border-red-700 hover:bg-gray-50 transition-all">
-                    <span class="material-symbols-outlined text-4xl mb-4 block">play_circle</span>
-                    
-                    <h2 class="font-display text-xl mb-2">Exploraciones</h2>
-                    
-                    <p class="font-body text-sm text-gray-600">Videos de investigaciones en lugares abandonados.</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- ULTIMAS NOTICIAS -->
-        <section class="px-6 lg:px-12 py-16 max-w-6xl mx-auto bg-gray-50">
-            
-            <div class="flex justify-between items-end mb-12">
-                
-                <h2 class="font-display text-2xl">Ultimas Noticias</h2>
-                
-                <a href="noticias.html" class="font-body text-xs text-red-700 uppercase tracking-wider flex items-center gap-2 hover:underline">
-                    Ver todas <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-            </div>
-            
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <article class="bg-white border border-gray-200 overflow-hidden group hover:shadow-lg transition-shadow">
-                    
-                    <div class="aspect-video overflow-hidden">
-                        
-                        <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=340&fit=crop" alt="Noticia"/>
-                    
-                    </div>
-                    
-                    
-                    <div class="p-6">
-                        
-                        <p class="font-body text-[10px] text-red-700 uppercase tracking-wider mb-2">Noticia | Hace 2 horas</p>
-                        
-                        <h3 class="font-display text-lg mb-2">Nueva investigacion en el castillo de Transilvania</h3>
-                        
-                        <p class="font-body text-sm text-gray-600">Un equipo internacional ha comenzado un estudio exhaustivo de las leyendas locales.</p>
-                    
-                    </div>
-                </article>
-                
-                
-                <article class="bg-white border border-gray-200 overflow-hidden group hover:shadow-lg transition-shadow">
-                    
-                    <div class="aspect-video overflow-hidden">
-                        
-                        <img loading="lazy" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=340&fit=crop" alt="Noticia"/>
-                    
-                    </div>
-                    
-                    
-                    <div class="p-6">
-                        
-                        <p class="font-body text-[10px] text-red-700 uppercase tracking-wider mb-2">Descubrimiento | Hace 1 dia</p>
-                        
-                        <h3 class="font-display text-lg mb-2">Hallazgo de grabaciones antiguas de 1923</h3>
-                        
-                        <p class="font-body text-sm text-gray-600">Restauracion de fonogramas con posibles registros paranormales.</p>
-                    
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- PODCAST DESTACADO -->
-        <section class="px-6 lg:px-12 py-16 max-w-6xl mx-auto border-b border-gray-200">
-            
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                
-                <div class="w-full lg:w-1/3">
-                    
-                    <div class="aspect-square relative border-4 border-red-700">
-                        
-                        <img loading="lazy" class="w-full h-full object-cover filter grayscale" src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=400&h=400&fit=crop" alt="Podcast"/>
-                        
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/50">
-                            
-                            <button class="w-20 h-20 bg-red-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                                
-                                <span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
-                            
-                            </button>
-                        
-                        </div>
-                    
-                    </div>
-                </div>
-                
-                
-                <div class="w-full lg:w-2/3">
-                    
-                    <span class="font-body text-xs text-red-700 uppercase tracking-widest mb-4 block">Episodio Destacado</span>
-                    
-                    
-                    <h2 class="font-display text-3xl lg:text-4xl mb-6">"Voces del Mas Alla"</h2>
-                    
-                    
-                    <p class="font-body text-gray-600 mb-8">Analisis de grabaciones EVP del Hospital St. Jude. Evidencias impactantes discutidas en detalle.</p>
-                    
-                    
-                    <a href="podcast.html" class="inline-flex items-center gap-2 px-6 py-3 bg-black text-white font-body text-xs uppercase tracking-wider hover:bg-red-700 transition-colors">
-                        
-                        Escuchar Episodio <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-black text-white py-12 px-6 lg:px-12">
-        
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div>
-                
-                <div class="font-display text-xl font-bold mb-4">FENOMENOS <span class="text-red-700">PARANORMALES</span></div>
-                
-                
-                <p class="font-body text-sm text-gray-400 mb-4">Dedicados a la investigacion y documentacion de fenomenos inexplicables desde 2010.</p>
-                
-                
-                <p class="font-body text-xs text-gray-500">© 2024 Fenomenos Paranormales. Todos los derechos reservados.</p>
-            
-            </div>
-            
-            
-            <div>
-                
-                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Enlaces Rapidos</h4>
-                
-                
-                <div class="flex flex-col gap-2">
-                    
-                    <a href="investigaciones.html" class="font-body text-sm text-gray-400 hover:text-white transition-colors">Investigaciones</a>
-                    
-                    <a href="blog.html" class="font-body text-sm text-gray-400 hover:text-white transition-colors">Blog</a>
-                    
-                    <a href="podcast.html" class="font-body text-sm text-gray-400 hover:text-white transition-colors">Podcast</a>
-                    
-                    <a href="contacto.html" class="font-body text-sm text-gray-400 hover:text-white transition-colors">Contacto</a>
-                
-                </div>
-            
-            </div>
-            
-            
-            <div>
-                
-                <h4 class="font-body text-xs uppercase tracking-wider text-red-700 mb-4">Newsletter</h4>
-                
-                
-                <p class="font-body text-sm text-gray-400 mb-4">Recibe las ultimas investigaciones en tu correo.</p>
-                
-                
-                <div class="flex border-b border-gray-600">
-                    
-                    <input type="email" placeholder="tu@email.com" class="bg-transparent flex-grow py-2 text-white focus:outline-none"/>
-                    
-                    <button class="text-red-700 hover:text-white transition-colors">
-                        
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    
-                    </button>
-                
-                </div>
-            
-            </div>
-        
+  <!-- ULTIMA INVESTIGACION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Lo más reciente</span>
+        <h2 class="section-title">ÚLTIMA <span class="rojo">INVESTIGACIÓN</span></h2>
+        <div class="section-line"><i class="fas fa-search"></i></div>
+      </div>
+      <div class="noticia-destacada">
+        <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Investigación" loading="lazy">
+        <div class="noticia-content">
+          <span class="fecha"><i class="fas fa-calendar"></i> 15 Enero 2025</span>
+          <h3>La Casa de los Espejos — Guanajuato</h3>
+          <p>Una mansión del siglo XIX donde los espejos reflejan figuras que no están presentes. Testigos reportan voces y apariciones repetidas en los pasillos.</p>
+          <a href="investigaciones.html" class="read-more">Ver todas las investigaciones <i class="fas fa-arrow-right"></i></a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- SCRIPTS -->
-    <script>
-        const btnHamburguesa = document.getElementById('btnHamburguesa');
-        const btnCerrarMenu = document.getElementById('btnCerrarMenu');
-        const menuMovil = document.getElementById('menuMovil');
-        const overlayMenu = document.getElementById('overlayMenu');
-        
-        function abrirMenu() {
-            menuMovil.classList.add('open');
-            overlayMenu.classList.add('visible');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function cerrarMenu() {
-            menuMovil.classList.remove('open');
-            overlayMenu.classList.remove('visible');
-            document.body.style.overflow = '';
-        }
-        
-        btnHamburguesa.addEventListener('click', abrirMenu);
-        btnCerrarMenu.addEventListener('click', cerrarMenu);
-        overlayMenu.addEventListener('click', cerrarMenu);
-        
-        document.querySelectorAll('#menuMovil a').forEach(link => {
-            link.addEventListener('click', cerrarMenu);
-        });
-        
-        (function() {
-            const nav = document.getElementById('mainNav');
-            let ultimoScroll = 0;
-            const umbral = 10;
-            
-            window.addEventListener('scroll', function() {
-                const actual = window.pageYOffset;
-                if (actual <= 100) {
-                    nav.classList.remove('nav-hidden');
-                    ultimoScroll = actual;
-                    return;
-                }
-                if (Math.abs(actual - ultimoScroll) < umbral) return;
-                if (actual > ultimoScroll) {
-                    nav.classList.add('nav-hidden');
-                } else {
-                    nav.classList.remove('nav-hidden');
-                }
-                ultimoScroll = actual;
-            });
-        })();
-    </script>
+  <!-- ULTIMO BLOG -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Artículo reciente</span>
+        <h2 class="section-title">ÚLTIMO <span class="rojo">BLOG</span></h2>
+        <div class="section-line"><i class="fas fa-pen-fancy"></i></div>
+      </div>
+      <div class="inv-grid" style="grid-template-columns: 1fr;">
+        <div class="inv-card" style="display: flex; flex-direction: row;">
+          <div class="inv-img-placeholder" style="width: 40%; min-height: 250px;"><i class="fas fa-microphone-alt"></i></div>
+          <div class="inv-card-body" style="width: 60%; display: flex; flex-direction: column; justify-content: center;">
+            <span class="inv-tag">&#10013; Técnicas</span>
+            <h3 class="inv-card-title">Cómo capturar evidencia EVP de calidad</h3>
+            <p class="inv-card-desc">Guía completa sobre equipos y técnicas para capturar voces electrónicas de manera efectiva durante investigaciones paranormales.</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> Hace 3 días</span>
+              <a href="blog.html" class="read-more">Ver todos los artículos <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ULTIMA NOTICIA -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Actualidad</span>
+        <h2 class="section-title">ÚLTIMA <span class="rojo">NOTICIA</span></h2>
+        <div class="section-line"><i class="fas fa-newspaper"></i></div>
+      </div>
+      <div class="noticia-destacada">
+        <img src="imagenes/ChatGPT Image 27 abr 2026, 11_56_40 p.m..png" alt="Noticia" loading="lazy">
+        <div class="noticia-content">
+          <span class="fecha"><i class="fas fa-calendar"></i> 18 Mayo 2026</span>
+          <h3>Nueva investigación en el castillo de Transilvania</h3>
+          <p>Un equipo internacional ha comenzado un estudio exhaustivo de las leyendas locales sobre vampiros en la región de Transilvania.</p>
+          <a href="noticias.html" class="read-more">Ver todas las noticias <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ULTIMO PODCAST -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Escucha lo más reciente</span>
+        <h2 class="section-title">ÚLTIMO <span class="rojo">PODCAST</span></h2>
+        <div class="section-line"><i class="fas fa-microphone"></i></div>
+      </div>
+      <div class="podcast-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+        <div class="podcast-card" style="display: flex; flex-direction: row;">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Podcast" style="width: 40%; object-fit: cover;">
+          <div class="podcast-body" style="width: 60%; display: flex; flex-direction: column; justify-content: center;">
+            <span class="podcast-ep">Ep. 42</span>
+            <h3>La Casa de los Espejos</h3>
+            <p>Una investigación completa sobre los fenómenos extraños en Guanajuato. Analizamos las evidencias capturadas durante nuestra noche de investigación.</p>
+            <a href="podcast.html" class="btn-primary" style="width: fit-content;"><i class="fas fa-headphones"></i> Ver todos los episodios</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ULTIMA EXPLORACION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Video reciente</span>
+        <h2 class="section-title">ÚLTIMA <span class="rojo">EXPLORACIÓN</span></h2>
+        <div class="section-line"><i class="fas fa-video"></i></div>
+      </div>
+      <div class="exploracion-grid" style="grid-template-columns: 1fr; max-width: 900px; margin: 0 auto;">
+        <div class="exploracion-card">
+          <div class="exploracion-img">
+            <img src="imagenes/ChatGPT Image 27 abr 2026, 11_59_54 p.m..png" alt="Exploración" loading="lazy">
+            <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+          </div>
+          <div class="exploracion-body">
+            <h3>Hospital Psiquiátrico Abandonado</h3>
+            <p>Una noche completa en uno de los hospitales más oscuros de México. Captamos evidencia sorprendente que desafía toda explicación racional.</p>
+            <a href="exploraciones.html" class="btn-primary"><i class="fas fa-film"></i> Ver todas las exploraciones</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA PREVIEW -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Momentos capturados</span>
+        <h2 class="section-title">GALERÍA <span class="rojo">PARANORMAL</span></h2>
+        <div class="section-line"><i class="fas fa-camera"></i></div>
+      </div>
+      <div class="galeria-grid" style="margin-bottom: 2rem;">
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Galería" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_56_40 p.m..png" alt="Galería" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_59_54 p.m..png" alt="Galería" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Galería" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <a href="galeria.html" class="btn-primary"><i class="fas fa-images"></i> Ver galería completa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONACIONES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Apoya la investigación</span>
+        <h2 class="section-title">DONACIONES <span class="rojo">PARANORMALES</span></h2>
+        <div class="section-line"><i class="fas fa-heart"></i></div>
+      </div>
+      <div class="donaciones-grid">
+        <div class="donacion-card">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_56_40 p.m..png" alt="PayPal" loading="lazy">
+          <h3>PayPal</h3>
+          <p>Realiza una donación directa de cualquier monto. Tu apoyo nos ayuda a continuar investigando lo inexplicable.</p>
+          <a href="donaciones.html" class="btn-primary"><i class="fab fa-paypal"></i> Donar con PayPal</a>
+        </div>
+        <div class="donacion-card">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Patreon" loading="lazy">
+          <h3>Patreon</h3>
+          <p>Únete como miembro y obtén acceso exclusivo a contenido especial, videos anticipados y más beneficios.</p>
+          <a href="donaciones.html" class="btn-primary"><i class="fab fa-patreon"></i> Apoyar en Patreon</a>
+        </div>
+        <div class="donacion-card">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_59_54 p.m..png" alt="Amazon" loading="lazy">
+          <h3>Lista de Amazon</h3>
+          <p>Compra equipo de investigación directamente de nuestra lista de deseos. Cada herramienta nos ayuda a captar mejor evidencia.</p>
+          <a href="donaciones.html" class="btn-primary"><i class="fab fa-amazon"></i> Ver Lista de Amazon</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="donaciones.html" class="btn-secondary"><i class="fas fa-heart"></i> Ver todas las opciones de donación</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">INVESTIGADOR <span>&#10013;</span> OXLACK</div>
+      <p class="footer-text">Investigando lo inexplicable desde 2015...</p>
+      <div class="footer-links">
+        <a href="investigaciones.html">Investigaciones</a>
+        <a href="blog.html">Blog</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <p class="copyright">&copy; 2025 Investigador Oxlack Paranormal • <a href="admin.html" style="color: #444; text-decoration: none;">Admin</a></p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

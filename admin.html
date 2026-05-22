@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin | Investigador Oxlack Paranormal</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=IM+Fell+English:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--negro);
+  padding-top: 60px;
+}
+.login-box {
+  background: var(--gris-oscuro);
+  border: 2px solid var(--rojo);
+  padding: 3rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.login-box h2 {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--blanco-puro);
+  margin-bottom: 2rem;
+}
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  background: var(--negro);
+  border: 1px solid #444;
+  color: var(--blanco);
+  font-family: 'IM Fell English', serif;
+}
+.login-box input:focus {
+  border-color: var(--rojo);
+  outline: none;
+}
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  background: var(--rojo);
+  color: var(--blanco-puro);
+  border: none;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.login-box button:hover {
+  background: var(--rojo-claro);
+}
+.error-msg {
+  color: var(--rojo);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  display: none;
+}
+
+.admin-panel {
+  display: none;
+  min-height: 100vh;
+  padding-top: 80px;
+  background: var(--fondo-principal);
+}
+.admin-header {
+  background: var(--negro);
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid var(--rojo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.admin-header h1 {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--blanco-puro);
+  font-size: 1.2rem;
+}
+.admin-header h1 span {
+  color: var(--rojo);
+}
+.logout-btn {
+  background: transparent;
+  color: var(--blanco);
+  border: 1px solid var(--rojo);
+  padding: 8px 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.logout-btn:hover {
+  background: var(--rojo);
+}
+
+.admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.admin-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  width: fit-content;
+  background: var(--blanco-puro);
+}
+.admin-tab {
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #666;
+}
+.admin-tab.active {
+  background: var(--rojo);
+  color: var(--blanco-puro);
+}
+.admin-tab:hover:not(.active) {
+  color: var(--rojo);
+}
+
+.admin-panel-content {
+  display: none;
+}
+.admin-panel-content.active {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  color: var(--negro);
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  background: var(--blanco-puro);
+  border: 1px solid #ccc;
+  border-left: 3px solid var(--rojo);
+  font-family: 'IM Fell English', serif;
+  font-size: 0.95rem;
+  color: var(--negro);
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--rojo);
+  outline: none;
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.file-upload {
+  border: 2px dashed #ccc;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: var(--blanco-puro);
+}
+.file-upload:hover {
+  border-color: var(--rojo);
+}
+.file-upload i {
+  font-size: 2rem;
+  color: var(--rojo);
+  margin-bottom: 0.5rem;
+}
+.file-upload p {
+  font-family: 'IM Fell English', serif;
+  color: #666;
+  font-style: italic;
+}
+.file-upload input {
+  display: none;
+}
+
+.submit-btn {
+  background: var(--rojo);
+  color: var(--blanco-puro);
+  border: none;
+  padding: 14px 32px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+.submit-btn:hover {
+  background: var(--rojo-oscuro);
+}
+
+.content-list {
+  background: var(--blanco-puro);
+  border: 1px solid #ccc;
+  margin-top: 2rem;
+}
+.content-item {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-item:last-child {
+  border-bottom: none;
+}
+.content-item h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: var(--negro);
+}
+.content-item span {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.65rem;
+  color: #888;
+}
+.content-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.content-actions button {
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.75rem;
+}
+.content-actions button:hover {
+  background: var(--rojo);
+  color: var(--blanco-puro);
+  border-color: var(--rojo);
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .admin-tabs {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .admin-tab {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="admin-login" id="loginSection">
+  <div class="login-box">
+    <h2>&#10013; ACCESO ADMIN</h2>
+    <input type="password" id="adminPass" placeholder="Contraseña de administrador">
+    <button onclick="login()">INGRESAR</button>
+    <p class="error-msg" id="errorMsg">Contraseña incorrecta</p>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-header">
+    <h1>INVESTIGADOR <span>&#10013;</span> OXLACK - ADMIN</h1>
+    <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+  </div>
+  
+  <div class="admin-content">
+    <!-- Tabs -->
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="showTab('blog')">Blog</button>
+      <button class="admin-tab" onclick="showTab('noticias')">Noticias</button>
+      <button class="admin-tab" onclick="showTab('galeria')">Galería</button>
+      <button class="admin-tab" onclick="showTab('podcast')">Podcast</button>
+      <button class="admin-tab" onclick="showTab('exploraciones')">Exploraciones</button>
+    </div>
+    
+    <!-- Blog Panel -->
+    <div class="admin-panel-content active" id="tab-blog">
+      <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Nuevo Artículo de Blog</h3>
+      <form onsubmit="saveContent(event, 'blog')">
+        <div class="form-group">
+          <label>Título del Artículo</label>
+          <input type="text" name="titulo" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Categoría</label>
+            <select name="categoria">
+              <option value="tecnicas">Técnicas</option>
+              <option value="teoria">Teoría</option>
+              <option value="experiencias">Experiencias</option>
+              <option value="equipo">Equipo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Fecha</label>
+            <input type="date" name="fecha" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Imagen Destacada</label>
+          <div class="file-upload" onclick="document.getElementById('blogImg').click()">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click para subir imagen</p>
+            <input type="file" id="blogImg" accept="image/*">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Contenido</label>
+          <textarea name="contenido" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">PUBLICAR ARTÍCULO</button>
+      </form>
+      
+      <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-family: 'Cinzel', serif;">Artículos Publicados</h3>
+      <div class="content-list" id="blogList">
+        <div class="content-item">
+          <div>
+            <h4>Cómo capturar evidencia EVP de calidad</h4>
+            <span>Técnicas • Hace 3 días</span>
+          </div>
+          <div class="content-actions">
+            <button><i class="fas fa-edit"></i></button>
+            <button><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Noticias Panel -->
+    <div class="admin-panel-content" id="tab-noticias">
+      <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Nueva Noticia</h3>
+      <form onsubmit="saveContent(event, 'noticias')">
+        <div class="form-group">
+          <label>Título de la Noticia</label>
+          <input type="text" name="titulo" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Fuente</label>
+            <input type="text" name="fuente" placeholder="Ej: Paranews">
+          </div>
+          <div class="form-group">
+            <label>Fecha</label>
+            <input type="date" name="fecha" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Imagen</label>
+          <div class="file-upload" onclick="document.getElementById('noticiaImg').click()">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click para subir imagen</p>
+            <input type="file" id="noticiaImg" accept="image/*">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Resumen</label>
+          <textarea name="resumen" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">PUBLICAR NOTICIA</button>
+      </form>
+    </div>
+    
+    <!-- Galería Panel -->
+    <div class="admin-panel-content" id="tab-galeria">
+      <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Subir Imágenes a Galería</h3>
+      <form onsubmit="saveContent(event, 'galeria')">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Categoría</label>
+            <select name="categoria">
+              <option value="fans">Fotos con Fans</option>
+              <option value="investigadores">Fotos con Investigadores</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Descripción</label>
+            <input type="text" name="descripcion" placeholder="Ej: Investigación en Guanajuato">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Imágenes</label>
+          <div class="file-upload" onclick="document.getElementById('galeriaImg').click()">
+            <i class="fas fa-images"></i>
+            <p>Click para seleccionar imágenes (puedes seleccionar múltiples)</p>
+            <input type="file" id="galeriaImg" accept="image/*" multiple>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">SUBIR IMÁGENES</button>
+      </form>
+    </div>
+    
+    <!-- Podcast Panel -->
+    <div class="admin-panel-content" id="tab-podcast">
+      <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Nuevo Episodio de Podcast</h3>
+      <form onsubmit="saveContent(event, 'podcast')">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Número de Episodio</label>
+            <input type="text" name="episodio" placeholder="Ej: Ep. 43">
+          </div>
+          <div class="form-group">
+            <label>Fecha</label>
+            <input type="date" name="fecha" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Título del Episodio</label>
+          <input type="text" name="titulo" required>
+        </div>
+        <div class="form-group">
+          <label>Imagen de Portada</label>
+          <div class="file-upload" onclick="document.getElementById('podcastImg').click()">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click para subir portada</p>
+            <input type="file" id="podcastImg" accept="image/*">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Descripción</label>
+          <textarea name="descripcion" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Link del Audio (Spotify/YouTube/etc)</label>
+          <input type="url" name="audioLink" placeholder="https://...">
+        </div>
+        <button type="submit" class="submit-btn">PUBLICAR EPISODIO</button>
+      </form>
+    </div>
+    
+    <!-- Exploraciones Panel -->
+    <div class="admin-panel-content" id="tab-exploraciones">
+      <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Nueva Exploración</h3>
+      <form onsubmit="saveContent(event, 'exploraciones')">
+        <div class="form-group">
+          <label>Título de la Exploración</label>
+          <input type="text" name="titulo" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ubicación</label>
+            <input type="text" name="ubicacion" placeholder="Ej: Guanajuato, México">
+          </div>
+          <div class="form-group">
+            <label>Fecha</label>
+            <input type="date" name="fecha" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Imágenes de la Exploración</label>
+          <div class="file-upload" onclick="document.getElementById('explImg').click()">
+            <i class="fas fa-images"></i>
+            <p>Click para subir fotos de la exploración</p>
+            <input type="file" id="explImg" accept="image/*" multiple>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Descripción</label>
+          <textarea name="descripcion" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Link del Video (YouTube)</label>
+          <input type="url" name="videoLink" placeholder="https://youtube.com/...">
+        </div>
+        <button type="submit" class="submit-btn">PUBLICAR EXPLORACIÓN</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+// Contraseña del admin (en producción esto debe estar en el servidor)
+const ADMIN_PASSWORD = 'Oxlack2025!';
+
+function login() {
+  const pass = document.getElementById('adminPass').value;
+  if (pass === ADMIN_PASSWORD) {
+    document.getElementById('loginSection').style.display = 'none';
+    document.getElementById('adminPanel').style.display = 'block';
+    localStorage.setItem('adminLoggedIn', 'true');
+  } else {
+    document.getElementById('errorMsg').style.display = 'block';
+  }
+}
+
+function logout() {
+  localStorage.removeItem('adminLoggedIn');
+  document.getElementById('loginSection').style.display = 'flex';
+  document.getElementById('adminPanel').style.display = 'none';
+  document.getElementById('adminPass').value = '';
+}
+
+function showTab(tabName) {
+  // Ocultar todos los paneles
+  document.querySelectorAll('.admin-panel-content').forEach(panel => {
+    panel.classList.remove('active');
+  });
+  // Quitar active de todos los tabs
+  document.querySelectorAll('.admin-tab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+  // Mostrar panel seleccionado
+  document.getElementById('tab-' + tabName).classList.add('active');
+  // Activar tab
+  event.target.classList.add('active');
+}
+
+function saveContent(event, type) {
+  event.preventDefault();
+  
+  // Aquí iría la lógica para guardar en el servidor
+  // Por ahora solo mostramos un mensaje
+  alert('Contenido guardado exitosamente (simulado)');
+  event.target.reset();
+}
+
+// Verificar si ya está logueado
+if (localStorage.getItem('adminLoggedIn') === 'true') {
+  document.getElementById('loginSection').style.display = 'none';
+  document.getElementById('adminPanel').style.display = 'block';
+}
+
+// Login con Enter
+document.getElementById('adminPass').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') login();
+});
+</script>
+
+</body>
+</html>
