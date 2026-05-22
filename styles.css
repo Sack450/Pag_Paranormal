@@ -1,0 +1,650 @@
+/***************************************************
+ * FENOMENOS PARANORMALES - ESTILOS PRINCIPALES
+ * Colores: Blanco, Rojo, Negro
+ ***************************************************/
+
+/* ============================================
+   RESET Y CONFIGURACIÓN BASE
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ============================================
+   PALETA DE COLORES
+   ============================================ */
+:root {
+    /* Colores principales */
+    --color-blanco: #ffffff;
+    --color-negro: #000000;
+    --color-rojo: #b6171e;
+    --color-rojo-oscuro: #8a1118;
+    --color-rojo-claro: #dc2626;
+    
+    /* Grises */
+    --color-gris-claro: #f5f5f5;
+    --color-gris-medio: #d1d1d1;
+    --color-gris-oscuro: #4a4a4a;
+    
+    /* Colores funcionales */
+    --bg-principal: #ffffff;
+    --texto-principal: #000000;
+    --color-acento: #b6171e;
+    --color-borde: #000000;
+}
+
+/* ============================================
+   TIPOGRAFÍA
+   ============================================ */
+.ebGaramond {
+    font-family: "EB Garamond", serif;
+}
+
+.hankenGrotesk {
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* ============================================
+   NAVEGACIÓN PRINCIPAL
+   ============================================ */
+#mainNav {
+    background-color: var(--color-blanco);
+    border-bottom: 2px solid var(--color-negro);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-hidden {
+    transform: translateY(-100%);
+}
+
+nav {
+    transition: transform 0.35s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Logo */
+.logo-principal {
+    font-family: "EB Garamond", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-negro);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-principal span {
+    color: var(--color-rojo);
+}
+
+/* Menú Desktop */
+.nav-links {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+.nav-link {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-negro);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-rojo);
+    border-bottom-color: var(--color-rojo);
+}
+
+.nav-link.active {
+    color: var(--color-rojo);
+    font-weight: 600;
+}
+
+/* Botón Hamburguesa */
+#btnHamburguesa {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--color-negro);
+    transition: color 0.3s ease;
+}
+
+#btnHamburguesa:hover {
+    color: var(--color-rojo);
+}
+
+@media (min-width: 1024px) {
+    #btnHamburguesa {
+        display: none;
+    }
+}
+
+/* ============================================
+   MENÚ LATERAL (DESKTOP)
+   ============================================ */
+.sidebar {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 80px;
+        width: 260px;
+        height: calc(100vh - 80px);
+        background-color: var(--color-blanco);
+        border-right: 1px solid var(--color-negro);
+        z-index: 40;
+        padding: 2rem 1rem;
+        overflow-y: auto;
+    }
+}
+
+.sidebar-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-gris-medio);
+}
+
+.sidebar-title {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-rojo);
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-status {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-gris-oscuro);
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-negro);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background-color: var(--color-gris-claro);
+    border-left-color: var(--color-rojo);
+    color: var(--color-rojo);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-gris-medio);
+}
+
+.btn-apoyar {
+    width: 100%;
+    padding: 0.75rem;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: 1px solid var(--color-negro);
+    color: var(--color-negro);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.btn-apoyar:hover {
+    background-color: var(--color-rojo);
+    border-color: var(--color-rojo);
+    color: var(--color-blanco);
+}
+
+/* ============================================
+   MENÚ MÓVIL (DRAWER)
+   ============================================ */
+#overlayMenu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+}
+
+#overlayMenu.visible {
+    display: block;
+}
+
+#menuMovil {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: var(--color-blanco);
+    border-right: 2px solid var(--color-negro);
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+#menuMovil.open {
+    transform: translateX(0);
+}
+
+.menu-movil-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-gris-medio);
+}
+
+.menu-movil-logo {
+    font-family: "EB Garamond", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-negro);
+}
+
+#btnCerrarMenu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-negro);
+    transition: color 0.3s ease;
+}
+
+#btnCerrarMenu:hover {
+    color: var(--color-rojo);
+}
+
+.menu-movil-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu-movil-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-negro);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.menu-movil-link:hover {
+    background-color: var(--color-gris-claro);
+    border-left-color: var(--color-rojo);
+    color: var(--color-rojo);
+}
+
+/* ============================================
+   CONTENIDO PRINCIPAL
+   ============================================ */
+main {
+    flex-grow: 1;
+    margin-top: 80px;
+}
+
+/* ============================================
+   SECCIONES
+   ============================================ */
+section {
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 6rem 2rem;
+    }
+}
+
+.section-title {
+    font-family: "EB Garamond", serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-negro);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title span {
+    color: var(--color-rojo);
+}
+
+.section-subtitle {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-rojo);
+    margin-bottom: 3rem;
+    display: block;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    border: 2px solid var(--color-negro);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-rojo);
+    border-color: var(--color-rojo);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-negro);
+    border: 2px solid var(--color-negro);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+}
+
+.btn-rojo {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border: 2px solid var(--color-rojo);
+}
+
+.btn-rojo:hover {
+    background-color: var(--color-rojo-oscuro);
+    border-color: var(--color-rojo-oscuro);
+}
+
+/* ============================================
+   EFECTOS Y ANIMACIONES
+   ============================================ */
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitchColor {
+    0% { text-shadow: 2px 0 var(--color-rojo), -2px 0 #00ffff; }
+    50% { text-shadow: -2px 2px var(--color-rojo), 2px -2px #00ffff; }
+    100% { text-shadow: 0 0 transparent; }
+}
+
+.glitch-text {
+    position: relative;
+}
+
+.glitch-active {
+    animation: glitch 0.3s ease-in-out, glitchColor 0.3s ease-in-out;
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-overlay.visible {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--color-blanco);
+    border: 2px solid var(--color-negro);
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.btn-cerrar-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-negro);
+    transition: color 0.3s ease;
+}
+
+.btn-cerrar-modal:hover {
+    color: var(--color-rojo);
+}
+
+/* ============================================
+   FORMULARIOS
+   ============================================ */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 0;
+    border: none;
+    border-bottom: 1px solid var(--color-gris-medio);
+    background: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-negro);
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-bottom-color: var(--color-rojo);
+}
+
+.form-input::placeholder {
+    color: var(--color-gris-medio);
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+
+.mt-auto { margin-top: auto; }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-8 { gap: 2rem; }
+
+.hidden { display: none; }
+
+/* ============================================
+   MATERIAL SYMBOLS
+   ============================================ */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-gris-claro);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gris-medio);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-rojo);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 4rem 2rem;
+    margin-top: auto;
+}
+
+.footer-link {
+    color: var(--color-gris-medio);
+    text-decoration: none;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-rojo);
+}
