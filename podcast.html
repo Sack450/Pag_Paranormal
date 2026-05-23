@@ -23,6 +23,7 @@
   width: 100%;
   aspect-ratio: 16/9;
   overflow: hidden;
+  cursor: pointer;
 }
 .podcast-thumbnail img {
   width: 100%;
@@ -127,13 +128,85 @@
   height: 100%;
   border: none;
 }
+.nav-back {
+  margin-left: 2rem;
+}
+.podcast-audio-body p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+.btn-download {
+  flex: 1;
+  justify-content: center;
+}
+.podcast-more {
+  text-align: center;
+  margin-top: 3rem;
+}
+.btn-youtube-more {
+  margin-right: 1rem;
+}
+.audio-custom-player {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--negro);
+  padding: 8px 12px;
+  margin: 1rem 0;
+  border-left: 3px solid var(--rojo);
+}
+.player-btn {
+  background: transparent;
+  border: none;
+  color: var(--blanco-puro);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+.player-btn:hover {
+  color: var(--rojo);
+}
+.player-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--gris-medio);
+  height: 4px;
+  outline: none;
+  cursor: pointer;
+}
+.player-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--rojo);
+  border-radius: 50%;
+  transition: transform 0.1s;
+}
+.player-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.player-time {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.75rem;
+  color: var(--blanco);
+  min-width: 35px;
+  text-align: right;
+}
 </style>
 </head>
 <body>
 
 <!-- NAV SIMPLIFICADO -->
 <nav>
-  <a href="index.html" class="btn-secondary" style="margin-left: 2rem;"><i class="fas fa-arrow-left"></i> Regresar</a>
+  <a href="index.html" class="btn-secondary nav-back"><i class="fas fa-arrow-left"></i> Regresar</a>
   <a class="nav-logo" href="index.html">INVESTIGADOR <span>&#10013;</span> OXLACK</a>
   <div></div>
 </nav>
@@ -151,37 +224,55 @@
       <h3><i class="fas fa-video"></i> Videos Destacados</h3>
       <div class="podcast-grid">
         
-        <!-- Video 1: Reemplaza VIDEO_ID_1 con el ID de tu video de YouTube -->
+        <!-- Video 1: coincidencias imposibles -->
         <div class="podcast-card">
           <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" 
-                    title="Video Podcast 1" 
+            <iframe src="https://www.youtube.com/embed/e6a2OQoCzTo" 
+                    title="Coincidencias imposibles" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
           </div>
           <div class="podcast-body">
             <span class="podcast-ep">Ep. 42</span>
-            <h3>Título del Video Podcast</h3>
-            <p>Descripción breve del episodio...</p>
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" class="btn-primary">
+            <h3>Coincidencias imposibles</h3>
+            <p>¿Son simples casualidades o hilos invisibles del destino? Analizamos misterios que desafían toda probabilidad lógica...</p>
+            <a href="https://www.youtube.com/watch?v=e6a2OQoCzTo" target="_blank" rel="noopener noreferrer" class="btn-primary">
               <i class="fab fa-youtube"></i> Ver en YouTube
             </a>
           </div>
         </div>
 
-        <!-- Video 2 -->
+        <!-- Video 2: ¿exiten las hadas? -->
         <div class="podcast-card">
           <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" 
-                    title="Video Podcast 2" 
+            <iframe src="https://www.youtube.com/embed/Ao2ViaWXT3w" 
+                    title="¿Existen las hadas?" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
           </div>
           <div class="podcast-body">
             <span class="podcast-ep">Ep. 41</span>
-            <h3>Título del Video Podcast</h3>
-            <p>Descripción breve del episodio...</p>
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" class="btn-primary">
+            <h3>¿Existen las hadas?</h3>
+            <p>Criaturas de luz o entes de la naturaleza. Repasamos la evidencia histórica y relatos de encuentros con estos seres del folklore...</p>
+            <a href="https://www.youtube.com/watch?v=Ao2ViaWXT3w" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <i class="fab fa-youtube"></i> Ver en YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Video 3: la virgen que cobra vida -->
+        <div class="podcast-card">
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/yw8mOkV43qw" 
+                    title="La virgen que cobra vida" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+          </div>
+          <div class="podcast-body">
+            <span class="podcast-ep">Ep. 40</span>
+            <h3>La virgen que cobra vida</h3>
+            <p>Milagro o ilusión óptica. Investigamos el fenómeno de las estatuas que parpadean o se mueven ante los ojos de los fieles...</p>
+            <a href="https://www.youtube.com/watch?v=yw8mOkV43qw" target="_blank" rel="noopener noreferrer" class="btn-primary">
               <i class="fab fa-youtube"></i> Ver en YouTube
             </a>
           </div>
@@ -195,57 +286,92 @@
       <h3><i class="fas fa-headphones"></i> Solo Audio</h3>
       <div class="podcast-grid">
         
-        <!-- Audio 1: Miniatura + Reproductor de Audio -->
-        <div class="podcast-audio-card">
+        <!-- Audio 1: Ovnis, leyendas y monstruos -->
+        <div class="podcast-audio-card" data-video-id="w1lK6A1HTYI">
           <div class="podcast-thumbnail">
-            <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Episodio Audio 1">
-            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-          </div>
-          <div class="podcast-audio-body">
-            <span class="ep-num">Ep. 40 - Solo Audio</span>
-            <h3>Título del Episodio de Audio</h3>
-            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Escucha este episodio completo en formato audio.</p>
-            
-            <!-- Reproductor de Audio -->
-            <audio class="audio-player" controls>
-              <source src="audio/episodio-40.mp3" type="audio/mpeg">
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-            
-            <div class="podcast-actions">
-              <a href="https://www.youtube.com/watch?v=VIDEO_ID_AUDIO_1" target="_blank" class="btn-video">
-                <i class="fab fa-youtube"></i> Ver Video
-              </a>
-              <a href="audio/episodio-40.mp3" download class="btn-secondary" style="flex: 1; justify-content: center;">
-                <i class="fas fa-download"></i> Descargar
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Audio 2 -->
-        <div class="podcast-audio-card">
-          <div class="podcast-thumbnail">
-            <img src="imagenes/ChatGPT Image 27 abr 2026, 11_56_40 p.m..png" alt="Episodio Audio 2">
+            <img src="https://img.youtube.com/vi/w1lK6A1HTYI/hqdefault.jpg" alt="Ovnis, leyendas y monstruos">
             <div class="play-icon"><i class="fas fa-play-circle"></i></div>
           </div>
           <div class="podcast-audio-body">
             <span class="ep-num">Ep. 39 - Solo Audio</span>
-            <h3>Título del Episodio de Audio</h3>
-            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Escucha este episodio completo en formato audio.</p>
+            <h3>Ovnis, leyendas y monstruos</h3>
+            <p>Escucha la transmisión especial de este episodio completo.</p>
             
-            <audio class="audio-player" controls>
-              <source src="audio/episodio-39.mp3" type="audio/mpeg">
-              Tu navegador no soporta el elemento de audio.
-            </audio>
+            <!-- Reproductor de Audio Personalizado -->
+            <div class="audio-custom-player">
+              <button class="player-btn play-btn" title="Reproducir/Pausar"><i class="fas fa-play"></i></button>
+              <input type="range" class="player-slider seek-bar" value="0" max="100" title="Progreso">
+              <span class="player-time">0:00</span>
+              <button class="player-btn vol-btn" title="Silenciar/Activar"><i class="fas fa-volume-up"></i></button>
+            </div>
             
             <div class="podcast-actions">
-              <a href="https://www.youtube.com/watch?v=VIDEO_ID_AUDIO_2" target="_blank" class="btn-video">
+              <a href="https://www.youtube.com/watch?v=w1lK6A1HTYI" target="_blank" rel="noopener noreferrer" class="btn-video">
                 <i class="fab fa-youtube"></i> Ver Video
               </a>
-              <a href="audio/episodio-39.mp3" download class="btn-secondary" style="flex: 1; justify-content: center;">
-                <i class="fas fa-download"></i> Descargar
+              <button class="btn-secondary btn-download btn-share" data-share-url="https://www.youtube.com/watch?v=w1lK6A1HTYI">
+                <i class="fas fa-share-alt"></i> Compartir
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audio 2: Aberraciones medicas -->
+        <div class="podcast-audio-card" data-video-id="DynnLtgg_m8">
+          <div class="podcast-thumbnail">
+            <img src="https://img.youtube.com/vi/DynnLtgg_m8/hqdefault.jpg" alt="Aberraciones medicas">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+          </div>
+          <div class="podcast-audio-body">
+            <span class="ep-num">Ep. 38 - Solo Audio</span>
+            <h3>Aberraciones medicas</h3>
+            <p>Casos clínicos que desafiaron a la ciencia médica y horrorizaron al mundo.</p>
+            
+            <!-- Reproductor de Audio Personalizado -->
+            <div class="audio-custom-player">
+              <button class="player-btn play-btn" title="Reproducir/Pausar"><i class="fas fa-play"></i></button>
+              <input type="range" class="player-slider seek-bar" value="0" max="100" title="Progreso">
+              <span class="player-time">0:00</span>
+              <button class="player-btn vol-btn" title="Silenciar/Activar"><i class="fas fa-volume-up"></i></button>
+            </div>
+            
+            <div class="podcast-actions">
+              <a href="https://www.youtube.com/watch?v=DynnLtgg_m8" target="_blank" rel="noopener noreferrer" class="btn-video">
+                <i class="fab fa-youtube"></i> Ver Video
               </a>
+              <button class="btn-secondary btn-download btn-share" data-share-url="https://www.youtube.com/watch?v=DynnLtgg_m8">
+                <i class="fas fa-share-alt"></i> Compartir
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audio 3: Entrevista a cazafantasmas -->
+        <div class="podcast-audio-card" data-video-id="cGA2Xjx8VFE">
+          <div class="podcast-thumbnail">
+            <img src="https://img.youtube.com/vi/cGA2Xjx8VFE/hqdefault.jpg" alt="Entrevista a cazafantasmas">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+          </div>
+          <div class="podcast-audio-body">
+            <span class="ep-num">Ep. 37 - Solo Audio</span>
+            <h3>Entrevista a cazafantasmas</h3>
+            <p>Una charla directa con investigadores que buscan capturar lo imperceptible.</p>
+            
+            <!-- Reproductor de Audio Personalizado -->
+            <div class="audio-custom-player">
+              <button class="player-btn play-btn" title="Reproducir/Pausar"><i class="fas fa-play"></i></button>
+              <input type="range" class="player-slider seek-bar" value="0" max="100" title="Progreso">
+              <span class="player-time">0:00</span>
+              <button class="player-btn vol-btn" title="Silenciar/Activar"><i class="fas fa-volume-up"></i></button>
+            </div>
+            
+            <div class="podcast-actions">
+              <a href="https://www.youtube.com/watch?v=cGA2Xjx8VFE" target="_blank" rel="noopener noreferrer" class="btn-video">
+                <i class="fab fa-youtube"></i> Ver Video
+              </a>
+              <button class="btn-secondary btn-download btn-share" data-share-url="https://www.youtube.com/watch?v=cGA2Xjx8VFE">
+                <i class="fas fa-share-alt"></i> Compartir
+              </button>
             </div>
           </div>
         </div>
@@ -254,8 +380,8 @@
     </div>
 
     <!-- MAS EPISODIOS -->
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="https://www.youtube.com/@OxIackinvestigador" target="_blank" class="btn-primary" style="margin-right: 1rem;">
+    <div class="podcast-more">
+      <a href="https://www.youtube.com/@OxIackinvestigador" target="_blank" rel="noopener noreferrer" class="btn-primary btn-youtube-more">
         <i class="fab fa-youtube"></i> Ver todos los videos en YouTube
       </a>
     </div>
@@ -272,6 +398,168 @@
     </div>
   </div>
 </footer>
+
+<script>
+// API de YouTube e Interactividad del Reproductor Personalizado
+const players = {};
+const seekIntervals = {};
+
+// Cargar la API de iFrames de YouTube de forma dinámica
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// Esta función es llamada automáticamente por la API de YouTube al cargarse
+function onYouTubeIframeAPIReady() {
+  document.querySelectorAll('.podcast-audio-card').forEach(card => {
+    const videoId = card.dataset.videoId;
+    const playerContainerId = 'yt-player-' + videoId;
+    
+    // Crear el contenedor invisible para el iframe de YouTube
+    const container = document.createElement('div');
+    container.id = playerContainerId;
+    container.style.position = 'absolute';
+    container.style.width = '1px';
+    container.style.height = '1px';
+    container.style.opacity = '0.01';
+    container.style.pointerEvents = 'none';
+    card.appendChild(container);
+    
+    // Inicializar el reproductor oculto
+    players[videoId] = new YT.Player(playerContainerId, {
+      videoId: videoId,
+      playerVars: {
+        playsinline: 1,
+        controls: 0,
+        disablekb: 1,
+        fs: 0,
+        rel: 0,
+        modestbranding: 1
+      },
+      events: {
+        'onReady': () => initCardControls(card, videoId),
+        'onStateChange': (e) => onPlayerStateChange(e, videoId, card)
+      }
+    });
+  });
+}
+
+// Inicializar todos los eventos y controles interactivos de la tarjeta
+function initCardControls(card, videoId) {
+  const player = players[videoId];
+  const playBtn = card.querySelector('.play-btn');
+  const seekBar = card.querySelector('.seek-bar');
+  const volBtn = card.querySelector('.vol-btn');
+  const volIcon = volBtn.querySelector('i');
+  const thumbnail = card.querySelector('.podcast-thumbnail');
+
+  // Lógica de reproducir y pausar
+  const togglePlay = () => {
+    const state = player.getPlayerState();
+    if (state === YT.PlayerState.PLAYING) {
+      player.pauseVideo();
+    } else {
+      // Pausar todos los demás reproductores activos
+      Object.keys(players).forEach(id => {
+        if (id !== videoId && players[id] && players[id].getPlayerState() === YT.PlayerState.PLAYING) {
+          players[id].pauseVideo();
+        }
+      });
+      player.playVideo();
+    }
+  };
+
+  thumbnail.addEventListener('click', togglePlay);
+  playBtn.addEventListener('click', togglePlay);
+
+  // Controlar barra de búsqueda (desplazarse por el tiempo de audio)
+  seekBar.addEventListener('input', () => {
+    const duration = player.getDuration();
+    if (duration > 0) {
+      const seekTo = duration * (seekBar.value / 100);
+      player.seekTo(seekTo, true);
+    }
+  });
+
+  // Mutear o activar volumen
+  volBtn.addEventListener('click', () => {
+    if (player.isMuted()) {
+      player.unMute();
+      volIcon.className = 'fas fa-volume-up';
+    } else {
+      player.mute();
+      volIcon.className = 'fas fa-volume-mute';
+    }
+  });
+}
+
+// Escuchar cambios de estado en el reproductor de YouTube
+function onPlayerStateChange(event, videoId, card) {
+  const player = players[videoId];
+  const playBtnIcon = card.querySelector('.play-btn i');
+  const playIcon = card.querySelector('.play-icon i');
+  const seekBar = card.querySelector('.seek-bar');
+  const timeDisplay = card.querySelector('.player-time');
+
+  if (event.data === YT.PlayerState.PLAYING) {
+    playBtnIcon.className = 'fas fa-pause';
+    playIcon.className = 'fas fa-pause-circle';
+
+    // Iniciar intervalo para actualizar slider y tiempo transcurrido
+    seekIntervals[videoId] = setInterval(() => {
+      const currentTime = player.getCurrentTime();
+      const duration = player.getDuration();
+      
+      if (duration > 0) {
+        seekBar.value = (currentTime / duration) * 100;
+        timeDisplay.textContent = formatTime(currentTime);
+      }
+    }, 1000);
+  } else {
+    playBtnIcon.className = 'fas fa-play';
+    playIcon.className = 'fas fa-play-circle';
+
+    // Limpiar intervalo cuando no se está reproduciendo
+    if (seekIntervals[videoId]) {
+      clearInterval(seekIntervals[videoId]);
+      delete seekIntervals[videoId];
+    }
+    
+    // Si finaliza la reproducción, resetear barra
+    if (event.data === YT.PlayerState.ENDED) {
+      seekBar.value = 0;
+      timeDisplay.textContent = '0:00';
+    }
+  }
+}
+
+// Formatear segundos en formato clásico de reproductor (MM:SS)
+function formatTime(time) {
+  const mins = Math.floor(time / 60);
+  const secs = Math.floor(time % 60);
+  return mins + ':' + (secs < 10 ? '0' : '') + secs;
+}
+
+// Configurar los botones de compartir para que copien el enlace al portapapeles
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.btn-share').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = btn.dataset.shareUrl;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> ¡Copiado!';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar el enlace:', err);
+      });
+    });
+  });
+});
+</script>
 
 </body>
 </html>

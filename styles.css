@@ -617,3 +617,45 @@ footer {
   .inv-grid, .podcast-grid, .exploracion-grid, .donaciones-grid, .tienda-grid { grid-template-columns: 1fr; }
   .redes-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ── TARJETAS HORIZONTALES EN INICIO (BLOG / PODCAST) ── */
+.grid-featured {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.card-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+.card-horizontal-img {
+  width: 40%;
+  object-fit: cover;
+}
+.card-horizontal-placeholder {
+  width: 40%;
+  min-height: 250px;
+}
+.card-horizontal-body {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn-fit {
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .card-horizontal {
+    flex-direction: column;
+  }
+  .card-horizontal-img, .card-horizontal-placeholder {
+    width: 100%;
+    min-height: 200px;
+    height: 220px;
+  }
+  .card-horizontal-body {
+    width: 100%;
+  }
+}
