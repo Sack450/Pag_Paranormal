@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investigador Oxlack Paranormal | Inicio</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=IM+Fell+English:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Estilos específicos para index */
+.section-5-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.ver-mas-container {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV SIMPLIFICADO -->
+<nav>
+  <a class="nav-logo" href="index.html">INVESTIGADOR <span>&#10013;</span> OXLACK</a>
+</nav>
+
+<!-- INICIO / HERO -->
+<section id="inicio">
+  <div class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">&#10013; Investigador Paranormal &#10013;</p>
+      <h1 class="hero-title">INVESTIGADOR OXLACK</h1>
+      <p class="hero-subtitle">"No busco fantasmas. Busco la verdad que nadie quiere encontrar."</p>
+      <div class="hero-buttons">
+        <a href="#contenido" class="btn-primary">Explorar Contenido</a>
+        <a href="contacto.html" class="btn-secondary">Contactar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div id="contenido">
+
+  <!-- INVESTIGACIONES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Archivos Secretos</span>
+        <h2 class="section-title">INVESTIGACIONES <span class="rojo">PARANORMALES</span></h2>
+        <div class="section-line"><i class="fas fa-search"></i></div>
+      </div>
+      
+      <div class="section-5-grid">
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-ghost"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Caso Abierto</span>
+            <h3 class="inv-card-title">La Casa de los Espejos — Guanajuato</h3>
+            <p class="inv-card-desc">Una mansión del siglo XIX donde los espejos reflejan figuras que no están presentes...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> 15 Ene 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-eye"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Investigación Activa</span>
+            <h3 class="inv-card-title">El Túnel Olvidado — CDMX</h3>
+            <p class="inv-card-desc">Bajo la Ciudad de México existe una red de túneles del siglo XVIII...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> 3 Feb 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-moon"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Cerrado</span>
+            <h3 class="inv-card-title">El Rancho de los Gritos — Oaxaca</h3>
+            <p class="inv-card-desc">Durante cuatro noches consecutivas, vecinos grabaron sonidos imposibles...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> 20 Dic 2024</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-skull"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Caso Abierto</span>
+            <h3 class="inv-card-title">El Hospital Abandonado — Puebla</h3>
+            <p class="inv-card-desc">Testigos reportan apariciones de antiguos pacientes en los pasillos...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> 10 Ene 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ver-mas-container">
+        <a href="investigaciones.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Ver todas las investigaciones</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Artículos y Análisis</span>
+        <h2 class="section-title">BLOG <span class="rojo">PARANORMAL</span></h2>
+        <div class="section-line"><i class="fas fa-pen-fancy"></i></div>
+      </div>
+      
+      <div class="section-5-grid">
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-microphone-alt"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Técnicas</span>
+            <h3 class="inv-card-title">Cómo capturar evidencia EVP</h3>
+            <p class="inv-card-desc">Guía completa sobre equipos y técnicas para capturar voces electrónicas...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> Hace 3 días</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-book-open"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Teoría</span>
+            <h3 class="inv-card-title">La ciencia tras las apariciones</h3>
+            <p class="inv-card-desc">Análisis científico de los fenómenos de manifestación espectral...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> Hace 1 semana</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-camera"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Equipo</span>
+            <h3 class="inv-card-title">Mejores cámaras para cazar fantasmas</h3>
+            <p class="inv-card-desc">Revisión de equipos de filmación recomendados para investigaciones...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> Hace 2 semanas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-history"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Historia</span>
+            <h3 class="inv-card-title">Leyendas prehispánicas de México</h3>
+            <p class="inv-card-desc">Explorando los mitos y leyendas paranormales de la cultura azteca...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> Hace 3 semanas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ver-mas-container">
+        <a href="blog.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Ver todos los artículos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Actualidad</span>
+        <h2 class="section-title">NOTICIAS <span class="rojo">PARANORMALES</span></h2>
+        <div class="section-line"><i class="fas fa-newspaper"></i></div>
+      </div>
+      
+      <div class="section-5-grid">
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-globe"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Internacional</span>
+            <h3 class="inv-card-title">Investigación en Transilvania</h3>
+            <p class="inv-card-desc">Un equipo internacional estudia las leyendas de vampiros en Rumania...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> 18 May 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-satellite"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; OVNI</span>
+            <h3 class="inv-card-title">Nuevas revelaciones del Pentágono</h3>
+            <p class="inv-card-desc">El gobierno de EE.UU. desclasifica nuevos videos de objetos no identificados...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> 15 May 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-church"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Milagros</span>
+            <h3 class="inv-card-title">Estatua que "llora" en Guadalajara</h3>
+            <p class="inv-card-desc">Cientos de fieles acuden a una iglesia tras reportes de una virgen lacrimosa...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> 12 May 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-home"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Local</span>
+            <h3 class="inv-card-title">Casa embrujada en venta</h3>
+            <p class="inv-card-desc">Una residencia histórica en Querétaro genera polémica por su oscuro pasado...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-calendar-alt"></i> 10 May 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ver-mas-container">
+        <a href="noticias.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Ver todas las noticias</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Escucha lo Inexplicable</span>
+        <h2 class="section-title">PODCAST <span class="rojo">PARANORMAL</span></h2>
+        <div class="section-line"><i class="fas fa-microphone"></i></div>
+      </div>
+      
+      <div class="section-5-grid">
+        <div class="inv-card">
+          <div class="inv-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+            <img src="https://img.youtube.com/vi/e6a2OQoCzTo/mqdefault.jpg" alt="Ep 42" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Ep. 42</span>
+            <h3 class="inv-card-title">Coincidencias imposibles</h3>
+            <p class="inv-card-desc">¿Son simples casualidades o hilos invisibles del destino?</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-headphones"></i> Video + Audio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+            <img src="https://img.youtube.com/vi/Ao2ViaWXT3w/mqdefault.jpg" alt="Ep 41" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Ep. 41</span>
+            <h3 class="inv-card-title">¿Existen las hadas?</h3>
+            <p class="inv-card-desc">Criaturas de luz o entes de la naturaleza. Repasamos la evidencia...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-headphones"></i> Video + Audio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+            <img src="https://img.youtube.com/vi/yw8mOkV43qw/mqdefault.jpg" alt="Ep 40" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Ep. 40</span>
+            <h3 class="inv-card-title">La virgen que cobra vida</h3>
+            <p class="inv-card-desc">Milagro o ilusión óptica. Investigamos el fenómeno...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-headphones"></i> Video + Audio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+            <img src="https://img.youtube.com/vi/w1lK6A1HTYI/mqdefault.jpg" alt="Ep 39" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Ep. 39</span>
+            <h3 class="inv-card-title">Ovnis, leyendas y monstruos</h3>
+            <p class="inv-card-desc">Transmisión especial con múltiples temas paranormales...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-headphones"></i> Solo Audio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ver-mas-container">
+        <a href="podcast.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Ver todos los episodios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORACIONES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Lugares Malditos</span>
+        <h2 class="section-title">EXPLORACIONES <span class="rojo">PARANORMALES</span></h2>
+        <div class="section-line"><i class="fas fa-video"></i></div>
+      </div>
+      
+      <div class="section-5-grid">
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-hospital"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Exploración</span>
+            <h3 class="inv-card-title">Hospital Psiquiátrico Abandonado</h3>
+            <p class="inv-card-desc">Una noche completa en uno de los hospitales más oscuros de México...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-play-circle"></i> Ver video</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-cross"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Exploración</span>
+            <h3 class="inv-card-title">Cementerio de las Almas Perdidas</h3>
+            <p class="inv-card-desc">Exploración nocturna en un cementerio con más de 200 años...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-play-circle"></i> Ver video</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-dungeon"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Exploración</span>
+            <h3 class="inv-card-title">Mansión de los Suicidas</h3>
+            <p class="inv-card-desc">Una mansión con historia trágica y apariciones constantes...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-play-circle"></i> Ver video</span>
+            </div>
+          </div>
+        </div>
+        <div class="inv-card">
+          <div class="inv-img-placeholder"><i class="fas fa-warehouse"></i></div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Exploración</span>
+            <h3 class="inv-card-title">Fábrica Abandonada</h3>
+            <p class="inv-card-desc">Antigua fábrica textil con historias de trabajadores fantasmas...</p>
+            <div class="inv-card-meta">
+              <span><i class="fas fa-play-circle"></i> Ver video</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ver-mas-container">
+        <a href="exploraciones.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Ver todas las exploraciones</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Momentos Capturados</span>
+        <h2 class="section-title">GALERÍA <span class="rojo">PARANORMAL</span></h2>
+        <div class="section-line"><i class="fas fa-camera"></i></div>
+      </div>
+      
+      <div class="galeria-grid" style="margin-bottom: 2rem;">
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Galería" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_56_40 p.m..png" alt="Galería" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_59_54 p.m..png" alt="Galería" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Galería" loading="lazy">
+          <div class="galeria-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+      </div>
+
+      <div class="ver-mas-container">
+        <a href="galeria.html" class="btn-primary"><i class="fas fa-images"></i> Ver galería completa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONACIONES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Apoya la Investigación</span>
+        <h2 class="section-title">DONACIONES <span class="rojo">PARANORMALES</span></h2>
+        <div class="section-line"><i class="fas fa-heart"></i></div>
+      </div>
+      
+      <div class="donaciones-grid">
+        <div class="donacion-card">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_56_40 p.m..png" alt="PayPal" loading="lazy">
+          <h3>PayPal</h3>
+          <p>Realiza una donación directa de cualquier monto. Tu apoyo nos ayuda a continuar investigando lo inexplicable.</p>
+          <a href="donaciones.html" class="btn-primary"><i class="fab fa-paypal"></i> Donar con PayPal</a>
+        </div>
+        <div class="donacion-card">
+          <img src="imagenes/ChatGPT Image 18 may 2026, 12_57_29 p.m..png" alt="Patreon" loading="lazy">
+          <h3>Patreon</h3>
+          <p>Únete como miembro y obtén acceso exclusivo a contenido especial, videos anticipados y más beneficios.</p>
+          <a href="donaciones.html" class="btn-primary"><i class="fab fa-patreon"></i> Apoyar en Patreon</a>
+        </div>
+        <div class="donacion-card">
+          <img src="imagenes/ChatGPT Image 27 abr 2026, 11_59_54 p.m..png" alt="Amazon" loading="lazy">
+          <h3>Lista de Amazon</h3>
+          <p>Compra equipo de investigación directamente de nuestra lista de deseos. Cada herramienta nos ayuda a captar mejor evidencia.</p>
+          <a href="donaciones.html" class="btn-primary"><i class="fab fa-amazon"></i> Ver Lista de Amazon</a>
+        </div>
+      </div>
+
+      <div class="ver-mas-container">
+        <a href="donaciones.html" class="btn-secondary"><i class="fas fa-heart"></i> Ver todas las opciones de donación</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDA -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">&#10013; Productos Oficiales</span>
+        <h2 class="section-title">TIENDA <span class="rojo">OXLACK</span></h2>
+        <div class="section-line"><i class="fas fa-shopping-bag"></i></div>
+      </div>
+      
+      <div class="section-5-grid">
+        <div class="inv-card">
+          <div class="inv-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-book" style="font-size: 3rem; color: var(--rojo);"></i>
+          </div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Libro Digital</span>
+            <h3 class="inv-card-title">Crónicas Paranormales Vol. 1</h3>
+            <p class="inv-card-desc">Recopilación de las investigaciones más aterradoras documentadas en los últimos años.</p>
+            <div class="inv-card-meta">
+              <span style="color: var(--rojo); font-weight: bold;">$199 MXN</span>
+              <span><i class="fas fa-tablet-alt"></i> PDF</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-tshirt" style="font-size: 3rem; color: var(--rojo);"></i>
+          </div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Merchandising</span>
+            <h3 class="inv-card-title">Playera "Investigador"</h3>
+            <p class="inv-card-desc">Playera oficial con el logo de Investigador Oxlack. Disponible en negro y rojo.</p>
+            <div class="inv-card-meta">
+              <span style="color: var(--rojo); font-weight: bold;">$350 MXN</span>
+              <span><i class="fas fa-tshirt"></i> Tallas S-XXL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-mug-hot" style="font-size: 3rem; color: var(--rojo);"></i>
+          </div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Accesorios</span>
+            <h3 class="inv-card-title">Taza "No busco fantasmas"</h3>
+            <p class="inv-card-desc">Taza con la frase icónica del canal. Ideal para tus sesiones de investigación.</p>
+            <div class="inv-card-meta">
+              <span style="color: var(--rojo); font-weight: bold;">$150 MXN</span>
+              <span><i class="fas fa-mug-hot"></i> Cerámica</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inv-card">
+          <div class="inv-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-book-open" style="font-size: 3rem; color: var(--rojo);"></i>
+          </div>
+          <div class="inv-card-body">
+            <span class="inv-tag">&#10013; Guía</span>
+            <h3 class="inv-card-title">Manual del Cazafantasmas</h3>
+            <p class="inv-card-desc">Guía práctica con técnicas y equipos recomendados para iniciarse en la investigación paranormal.</p>
+            <div class="inv-card-meta">
+              <span style="color: var(--rojo); font-weight: bold;">$249 MXN</span>
+              <span><i class="fas fa-book-open"></i> Físico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ver-mas-container">
+        <a href="tienda.html" class="btn-primary"><i class="fas fa-shopping-bag"></i> Ver toda la tienda</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">INVESTIGADOR <span>&#10013;</span> OXLACK</div>
+      <p class="footer-text">Investigando lo inexplicable desde 2015...</p>
+      <p class="copyright">&copy; 2025 Investigador Oxlack Paranormal •</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

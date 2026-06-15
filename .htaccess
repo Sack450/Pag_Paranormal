@@ -1,0 +1,14 @@
+# Redirigir páginas estáticas antiguas a sus versiones dinámicas
+RewriteEngine On
+
+RewriteRule ^index\.html$ index.php [R=301,L]
+RewriteRule ^blog\.html$ blog.php [R=301,L]
+RewriteRule ^noticias\.html$ noticias.php [R=301,L]
+RewriteRule ^podcast\.html$ podcast.php [R=301,L]
+RewriteRule ^galeria\.html$ galeria.php [R=301,L]
+RewriteRule ^exploraciones\.html$ exploraciones.php [R=301,L]
+RewriteRule ^investigaciones\.html$ exploraciones.php [R=301,L]
+RewriteRule ^tienda\.html$ tienda.php [R=301,L]
+RewriteRule ^donaciones\.html$ donaciones.php [R=301,L]
+RewriteRule ^contacto\.html$ contacto.php [R=301,L]
+RewriteRule ^sobremi\.html$ sobremi.php [R=301,L]
